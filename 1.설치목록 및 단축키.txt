@@ -1,14 +1,14 @@
------------------ 확장 설치 목록
+---------- 확장 설치 목록
 open in browser => alt + b : html문서를 브라우저로 열기(단축키 : alt + b)
-Quick HTML Previewe => ctrl + q  s : html문서를 우측에서 미리보기(단축키 : ctrl + q  s)
 htmltagwrap =>  태그를 넣을 문자를 블록 잡고 alt + w  : 글자에 태그 자동 생성
 Auto Rename Tag : 여는 태그를 바꾸면 닫는 태그가 자동으로 바뀜
 Live Server => alt+L alt+ o : 저장하면 새로고침하지 않아도 바로 적용(alt+L alt+O)
 Image preview : 왼쪽 줄번호 측에 작게 이미지 미리보기
 
+
 ---------- 유용한 단축키
+ctrl + q  s : html문서를 우측에서 미리보기
 ctrl+k o : 기존창에서 별도의 창으로 열기
-Windows : Shift + Alt + F : 코드 정렬
 alt + shift + f : 코드 자동정렬
 alt + shift + a : /*  */ 주석
 alt + z (위치에 커서 놓고) : 태그안의 내용이 한줄로 긴것을 화면내에서 다 보이도록 여러줄로 내릴 때
