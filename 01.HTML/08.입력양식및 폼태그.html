@@ -45,13 +45,126 @@
 
     <form action="test.jsp">
         <fieldset>
+            <legend>제목1</legend>
             입력1 : <input name="text1"><br>
             입력2 : <input name="text2">
         </fieldset>
         <fieldset>
+            <legend>제목2</legend>
             다른입력a : <input name="other1"><br>
             다른입력b : <input name="other2">
         </fieldset>
+    </form>
+
+    <hr>
+
+    <h2>텍스트와 관련된 input 태그의 타입</h2>
+    <!--
+        속성들
+        - placeholder : 예문을 보여주는 글씨
+        - maxlength : 최대 문자의 길이 지정
+        - required : 이 칸을 채우지 않으면 서버로 전송 불가(오류)
+    -->
+    <form action="test.jsp">
+        <h3>type="text"</h3>
+        <p>- 한줄 짜리 테스트를 입력할 수 있는 텍스트 상자(기본값)</p>
+        아이디 : <input name="userId" placeholder="아이디 입력" maxlength="12">
+        <br>
+
+        <h3>type="password"</h3>
+        <p>- 비밀번호를 입력할 수 있는 텍스트 상자</p>
+        비밀번호 : <input type="password" name="userPW" placeholder="영문,숫자,특수문자만 가능" maxlength="12">
+        <br>
+
+        <h3>type="search|url|email|tel"</h3>
+        <p>- 겉모습은 일반 텍스트 상자와 유사하지만 각각의 정보에 맞게 세분화된 기능 제공</p>
+        검색 : <input type="search" name="q">
+        <br>
+        
+        홈페이지 : <input type="url" name="homepage">
+        <br>
+
+        이메일 : <input type="email" name="email">
+        <br>
+
+        전화번호 : <input type="tel" name="tel">
+        <br>
+
+        <input type="submit">
+    </form>
+
+    <hr>
+
+    <h2>textarea 태그</h2>
+    <p>- 텍스트 상자로 여러줄을 입력할 수 있음</p>
+    <!--
+        cols : 글자
+        rows : 몇행
+    -->
+    <form action="test.do" method="post">
+        제목 : <input name="title"><br>
+        내용 : <textarea name="content" cols="35" rows="10"></textarea>
+        <br>
+        <input type="submit">
+    </form>
+
+    <hr>
+
+    <h2>숫자와 관련된 input 태그</h2>
+    <form action="test.do">
+        <h3>type="number"</h3>
+        <p>
+            - 숫자만 입력가능<br>
+            - 스핀박스가 표시
+        </p>
+
+        수량 : <input type="number" name="amount" value="0" min="0" max="100" step="1">
+        <br>
+
+        <h3>type="range"</h3>
+        <p>- 슬라이드바를 통해 숫자 지정</p>
+
+        점수 : <input type="range" min="0" max="100" step="10">
+        <br>
+        <input type="submit">
+    </form>
+
+    <h2>날짜 및 시간</h2>
+    <form action="test.do">
+        <h3>type="date|month|week|datetime-local"</h3>
+
+        date : <input type="date" name="dateInput"><!-- 년,월,일-->
+        <br>
+
+        month : <input type="month" name="monthInput"><!-- 년,월-->
+        <br>
+
+        week : <input type="week" name="weekInput"><!-- 1년중 몇번째 주-->
+        <br>
+
+        time : <input type="time" name="timeInput"><!-- 오전|오후 시분 -->
+        <br>
+
+        datetime-local : <input type="datetime-local" name="dtInput"><!-- 년,월,일 오전|오후 시분-->
+        <br>
+
+        <input type="submit" value="서버로 전송"><br>
+        <input type="reset"> 
+    </form>
+
+    <hr>
+
+    <h2>라디오버튼과 체크박스</h2>
+    <form action="test.do">
+        <h3>라디오버튼(type=radio)</h3>
+        <p>
+            - 여러개의 값들 중 오로지 1개만 선택할 때
+            - 서버로 value의 값이 전송됨
+            - ** 중요 : 속성 name의 값이 같아야 됨
+        </p>
+        성별 :
+        <input type="radio" name="gender" value="M">남자 &emsp;
+        <input type="radio" name="gender" value="F">여자
     </form>
     
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
