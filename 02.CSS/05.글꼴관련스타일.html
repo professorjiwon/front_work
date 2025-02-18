@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Dongle&family=Jua&display=swap" rel="stylesheet">
+    <title>글꼴 관련 스타일</title>
+</head>
+<body>
+    <h1>글꼴 관련 스타일 속성(font~)</h1>
+    <h3>font-family : 글꼴 지정</h3>
+    <pre>
+        선택자 {
+            font-family: 글꼴명;
+        }
+    </pre>
+
+    <p id="ff1">글꼴테스트1</p>
+    <p id="ff2">글꼴테스트2</p>
+    <p id="ff3">글꼴테스트3</p>
+
+    <!---------------style------------------->
+    <style>
+        #ff1 { font-family: 궁서체, sans-serif; }
+        #ff2 { font-family: 굵은안상수체;}
+        #ff3 { font-family: 양재깨비체B;}
+    </style>
+
+    <h3>* 외부 웹 폰트 사용</h3>
+    <p>
+        구글 폰트 사용 : 
+        <a href="https://fonts.google.com/" target="_blank">구글 웹 폰트</a>
+    </p>
+
+    <p id="google1">Lorem ipsum dolor sit amet.</p>
+    <p id="google2">Lorem ipsum dolor sit amet.</p>
+    <p id="google3">Lorem ipsum dolor sit amet.</p>
+    
+    <!---------------style------------------->
+    <style>
+        #google1 {font-family: Jua, serif;}
+        #google2 {font-family: "Black And White Picture", serif; font-size: 25px;}
+        #google3 {font-family: "Dongle", serif; font-size: 30px;}
+    </style>
+
+    <h3>* 글꼴의 크기</h3>
+    <pre>
+        선택자{ font-size:크기(px|em|rem|%) }
+    </pre>
+
+    <ul>
+        <li id="fs1">고정크기 px테스트</li>
+        <li id="fs2">가변크기 %테스트</li>
+        <li id="fs3">가변크기 em테스트</li>
+        <li id="fs3">가변크기 rem테스트</li>
+    </ul>
+
+    <!---------------style------------------->
+    <style>
+        #fs1{font-size: 30px;}
+        #fs2{font-size: 200%;} /* 부모의 글꼴 크기의 상대적인 크기 */
+        #fs3{font-size: 2em;}  /* 부모의 글꼴 크기의 2배(기본글꼴들은 16px) */
+        #fs4{font-size: 2rem;}  /* root 부모(body)의 글꼴 크기를 기준으로 결정 */
+    </style>
+
+</body>
+</html>
