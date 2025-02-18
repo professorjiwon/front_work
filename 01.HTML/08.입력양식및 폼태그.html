@@ -21,7 +21,7 @@
     <h1>폼 태그</h1>
     <p>
         form태그 내에 submit버튼을 클릭시 해당 form안의 작성된 내용<br>
-        즉, 사용자 입력한 값들을 서버로 전송하면ㄴ서 요청하는 역할 수행<br><br>
+        즉, 사용자 입력한 값들을 서버로 전송하면서 요청하는 역할 수행<br><br>
 
         &lt;form action="" method="" &gt;<br><br>
 
@@ -158,15 +158,143 @@
     <form action="test.do">
         <h3>라디오버튼(type=radio)</h3>
         <p>
-            - 여러개의 값들 중 오로지 1개만 선택할 때
-            - 서버로 value의 값이 전송됨
+            - 여러개의 값들 중 오로지 1개만 선택할 때<br>
+            - 서버로 value의 값이 전송됨<br>
             - ** 중요 : 속성 name의 값이 같아야 됨
         </p>
         성별 :
         <input type="radio" name="gender" value="M">남자 &emsp;
         <input type="radio" name="gender" value="F">여자
+
+        <br><br>
+
+        고향 :
+        <input type="radio" name="hometown" value="서울">서울 &emsp;
+        <input type="radio" name="hometown" value="경기">경기 &emsp;
+        <input type="radio" name="hometown" value="인천">인천 &emsp;
+        <input type="radio" name="hometown" value="기타">기타
+        <br><br>
+
+        <input type="submit">&emsp;
+        <input type="reset">
     </form>
-    
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <hr>
+
+    <form action="test.do">
+        <h3>체크 박스 (type="checkbox")</h3>
+        <p>
+            - 제시한 여러개의 값들 중 여러개를 선택하고자 할 때
+            - 서버로 value의 값이 전송됨
+        </p>
+
+        취미 :
+        <input type="checkbox" name="hobby" value="독서" id="reading">
+        <label for="reading">독서</label> &emsp;
+
+        <input type="checkbox" name="hobby" value="운동" id="sport">
+        <label for="sport">운동</label> &emsp;
+
+        <input type="checkbox" name="hobby" value="영화감상" id="movie">
+        <label for="movie">영화감상</label>
+
+        <br><br>
+
+        <input type="submit">&emsp;
+        <input type="reset">
+    </form>
+
+    <hr>
+
+    <h2>추가적인 input태그 타입</h2>
+    <form action="test.do">
+        <h3>type="color"</h3>
+        <p>- 색상을 선택할 수 있는 input 타입</p>
+        색상 선택 : <input type="color" name="color">
+        <br>
+
+        <h3>type="file"</h3>
+        <p>- 첨부하고자 하는 파일을 선택할 수 있는 input 타입</p>
+        첨부파일 : <input type="file" name="uploadFile">
+        <br>
+
+        <h3>type="hidden"</h3>
+        <p>- 특정값을 화면에 노출시키지 않고 서버로 전송해야하는 정보가 있을 때</p>
+        페이지 : <input type="hidden" name="pageNum" value="3">
+        <br>
+
+        <h3>type="submit|reset|button"</h3>
+        <input type="submit"><!-- form안의 모든 값들을 서버로 전송 -->
+        <input type="reset"><!-- form안의 모든 값들을 초기화 -->
+        <input type="button" value="일반버튼"><!-- 일반버튼. 사용자가 정의 하여 사용할 때-->
+        <br>
+
+        <h3>button[type="submit|reset|button"]</h3>
+        <button type="submit">서버로 전송</button><!-- button의 type의 기본값-->
+        <button type="reset">초기화</button>
+        <button type="button">일반버튼</button>
+        <br>
+
+        <button>type을 생략하면 submit버튼</button>
+    </form>
+
+    <h2>select태그와 option태그</h2>
+    <p>
+        - 사용자에게 직접 키보드로 입력받는게 아니라 내가 제시한 여러 옵션(목록)중에서 선택
+        - 전송시 현재 선택된(selected) option값이 전송됨
+    </p>
+    <form action="test.do">
+        국적 :
+        <select name="national">
+            <option value="ko">한국</option>
+            <option value="us" selected>미국</option>
+            <option value="eu">영국</option>
+            <option value="ru">러시아</option>
+            <option value="etc">기타</option>
+        </select>
+        <br><br>
+
+        메뉴선택 :
+        <select name="menu" multiple>
+            <option value="된장찌개">된장찌개</option>
+            <option value="김치찌개">김치찌개</option>
+            <option value="김밥">김밥</option>
+            <option value="라면">라면</option>
+            <option value="쫄명">쫄면</option>
+            <option value="초밥">초밥</option>
+        </select>
+        <br><br>
+
+        수강신청 :
+        <select>
+            <optgroup label="공과대학">
+                <option value="건축공학과">건축공학과</option>
+                <option value="기계공학과">기계공학과</option>
+                <option value="컴퓨터공학과">컴퓨공학과</option>
+                <option value="화학과">화학과</option>
+            </optgroup>
+            <optgroup label="인문대학">
+                <option value="사학과">사학과</option>
+                <option value="철학과">철학과</option>
+                <option value="어학과">어학과</option>
+            </optgroup>
+        </select>
+
+        <h3>html5에서 새로 추가된 기능 datalist</h3>
+        <p>- 내가 제시한 목록 중에서 선택할 수도 있고, 목록에 없다면 직접 입력가능</p>
+
+        제일 가고싶은 여행지 :
+        <input type="text" name="여행" list="list">
+        <datalist id="list">
+            <option vlaue="강원도">강원도</option>
+            <option vlaue="경상도">경상도</option>
+            <option vlaue="경기도">경기도</option>
+        </datalist>
+
+        <br><br>
+
+        <input type="submit">&emsp;
+        <input type="reset">
+    </form>
 </body>
 </html>
