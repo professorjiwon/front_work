@@ -1,0 +1,98 @@
+/* ========================= 1. 속성 선택자 ====================== */
+/* div 요소들 중 name속성값이 name1과 "일치"하는 요소 선택 */
+div[name=name1] {
+    background-color: darkgrey;
+}
+
+/* div 요소들 중 name속성값이 name1과 단어로 "포함"되어 있는 요소 선택 */
+div[name~=name1] {
+    color :yellow;
+}
+
+/* div 요소들 중 name속성값이 na로 "시작"하는 요소 선택 */
+div[name^=na] {
+    background-color: rgb(117, 173, 155);
+}
+
+/* div 요소들 중 class속성값이 ss로 "끝"나는 요소 선택 */
+div[class$=ss] {
+    color:brown;
+}
+
+/* div 요소들 중 class속성값이 i가 "포함"되어 있는 요소 선택 */
+div[class*=i] {
+    color:red;
+    background-color: darkgrey;
+}
+
+/* class 속성값이 div-class인 요소들 중에 name속성값에 name3이 단어로 포함되어 있는 요소*/
+.div-class[name~=name3] {
+    background-color: burlywood;
+}
+
+/* ========================= 2. 자손/후손 선택자 ====================== */
+/* #test1의 자손들 모두 선택 */
+#test1>* {
+    background-color: coral;
+}
+
+/* #test1의 자손들 중 h4요소만 선택 */
+#test1>h4 {
+    background-color: rgb(141, 186, 228);
+}
+
+/* #test1의 자손들 중 ul의 자손들 중 li요소만 선택 */
+#test1>ul>li {
+    color: blueviolet;
+}
+
+/* #test1의 후손들 중 li요소만 선택 */
+#test1 li {
+    background-color:beige;
+}
+
+/* ========================= 3. 동위 선택자 ====================== */
+/* #test2의 바로 뒤에 나오는 div 하나만 선택 */
+#test2+div{background-color: yellow;}
+#test2+ul{background-color: cornflowerblue;}
+/* 선택안됨(바로 뒤 요소가 ul이 아니기 때문) */
+
+/* #test2의 뒤의 형제들중 div는 모두 다 */
+/* #test2~div{background-color:darkgoldenrod;} */
+#test2~ul{color:rgb(217, 15, 120);}
+
+/* ========================= 4. 반응 선택자 ====================== */
+.area {
+    background-color: yellowgreen;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+#active-test:active {
+    background-color: blueviolet;
+    color: white;
+}
+
+#hover-test:hover {
+    background-color: red;
+    color:white;
+}
+
+#link:link {color:aquamarine;}
+#link:hover {color:green;}
+#link:active {color:blueviolet;}
+#link:visited {color:coral;}
+
+/* ========================= 5. 상태 선택자 ====================== */
+input[type=checkbox]:checked {
+    width: 30px;
+    height: 30px;
+}
+
+input[type=checkbox]:checked+label {
+    font-size: 30px;
+}
+
+input[name^=user]:focus {
+    background-color: pink;
+}

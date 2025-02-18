@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="resources/css/other_selection_style.css" rel="stylesheet">
+
+    <title>Document</title>
+    <style>
+        div[name=name1] {
+            background-color: green;
+        }
+        /* div  요소들 중 name의 속성값이 name1과 같은 단아로 "포함"되어 있는 요소 선택 */
+        div[name~=name1] {
+            color :yellow;
+        }
+    </style>
+</head>
+<body>
+    <h2>속성 선택자</h2>
+    <p>
+       선택하고자 하는 요소내에 작성되어 있는 속성을 이용하여 선택하는 방법 <br>
+       선택자 뒤에 []를 이용하여 속성과 속성값을 제시함 
+    </p>
+    <pre>
+        선택자[속성명=속성값]{스타일 속성 : 값; ...} : 속성값이 "일치" 하는 요소
+        선택자[속성명~=속성값]{스타일 속성 : 값; ...} : 속성값이 단어로 "포함"되어 있는 요소
+        선택자[속성명^=속성값]{스타일 속성 : 값; ...} : 속성값으로 "시작"하는 요소
+        선택자[속성명&=속성값]{스타일 속성 : 값; ...} : 속성값으로 "끝"나는 요소
+        선택자[속성명*=속성값]{스타일 속성 : 값; ...} : 속성값이 "포함"하는 요소
+    </pre>
+    <!-- .div-class[name=name$]{div$} -->
+    <div class="div-class" name="name1">div1</div>
+    <div class="div-class" name="name2">div2</div>
+    <div class="div-class" name="name3 name1">div3</div>
+    <div class="class-div" name="name4">div4</div>
+</body>
+</html>
