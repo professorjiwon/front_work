@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자 우선 순위</title>
+    <style>
+        h1 {
+            background-color: antiquewhite;
+            color: red;
+        }
+        h1 {
+            background-color: chocolate;
+        }
+        #id1 {
+            background-color: lightcyan;
+        }
+        .class1 {
+            background-color: cadetblue;
+        }
+        div {
+            background-color: yellow;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>선택자 우선 순위</h1>
+    <p>
+        - 기본적인 css는 위에서부터 아래로 적용됨<br>
+        - 동일한 요소를 다양한 선택자로 css를 부여한 경우 우선순위에 따라 적용됨<br>
+          태그선택자  -> 클래스선택자 -> 아이디선택자 -> 인라인스타일방식 -> !important
+    </p>
+
+    <div id="id1" class="class1">우선순위 선택자</div>
+</body>
+</html>

@@ -143,5 +143,75 @@
     아이디 : <input name="userId"><br>
     비밀번호 : <input type="password" name="userPw">
 
+    <pre>
+        3) 활성화(enabled)가 되어있는 요소
+           선택자:enabled {
+            스타일속성:값;
+           }
+        4) 비활성화(disabled)가 되어있는 요소
+           선택자:disabled {
+            스타일속성:값;
+           }   
+    </pre>
+
+    <button>클릭가능</button>
+    <button disabled>클릭불가능</button>
+
+    <hr>
+
+    <h2>6. 일반 구조 선택자</h2>
+    <p>특정한 위치에 있는 태그를 선택하는 선택자(일반적으로 자손, 후손 선택자와 함께 사용)</p>
+    <pre>
+        :first-child            -> 자식 관계 태그 중 첫번째 태그 선택
+        :last-child             -> 자식 관계 태그 중 마지막 태그 선택
+        :nth-child(수열)        -> 자식 관계 태그 중 앞에서 수열 번째 태그 선택
+        :nth-last-child(수열)   -> 자식 관계 태그 중 뒤에서 수열 번째 태그 선택
+    </pre>
+
+    <div id="spring">
+        <p>봄1</p>
+        <p>봄2</p>
+        <p>봄3</p>
+        <p>봄4</p>
+        <p>봄5</p>
+    </div>
+
+    <hr>
+
+    <h2>7. 형제 구조 선택자</h2>
+    <p>특정한 위치에 있는 태그를 선택하는 선택자(형제 관계)</p>
+    <pre>
+        :first-of-type            -> 형제 관계 태그 중 첫번째 태그 선택
+        :last-of-type             -> 형제 관계 태그 중 마지막 태그 선택
+        :nth-of-type(수열)        -> 형제 관계 태그 중 앞에서 수열 번째 태그 선택
+        :nth-last-of-type(수열)   -> 형제 관계 태그 중 뒤에서 수열 번째 태그 선택
+    </pre>
+
+    <div id="summer">
+        <div>div1</div>
+        <p>가을1</p>
+        <p>가을2</p>
+        <p>가을3</p>
+        <div>div2</div>
+        <p>가을4</p>
+        <p>가을5</p>
+        <div>div3</div>
+    </div>
+
+    <hr>
+
+    <h2>8. 부정 선택자</h2>
+    <p>특정 선택 요소를 제외한 나머지 요소들을 선택</p>
+    <pre>
+        요소:not(선택자)
+    </pre>
+
+    <div id="fall">
+        <p>가을1</p>
+        <p>가을2</p>
+        <p>가을3</p>
+        <p>가을4</p>
+        <p>가을5</p>
+    </div>
 </body>
 </html>

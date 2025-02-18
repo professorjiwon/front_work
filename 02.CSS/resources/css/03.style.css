@@ -96,3 +96,32 @@ input[type=checkbox]:checked+label {
 input[name^=user]:focus {
     background-color: pink;
 }
+
+button:enabled {
+    color: rgb(65, 10, 116);
+}
+
+button:disabled {
+    color: darkolivegreen;
+}
+
+/* ========================= 6. 일반 구조 선택자 ====================== */
+/* #spring의 후손들 중 첫번째 */
+#spring :first-child {background-color: lightgray;}
+/* #spring>:first-child {background-color: lightgray;} */
+
+#spring :last-child {background-color: lightgray;}
+#spring :nth-child(2) {background-color: lightcoral;}
+#spring :nth-child(2n) {color: rgb(35, 146, 220);}  /* 짝수번째 */
+#spring :nth-child(2n+1) {color: rgb(126, 4, 142);}
+
+/* ========================= 7. 형제 구조 선택자 ====================== */
+#summer p:first-of-type {background-color: lightgray;}
+#summer p:last-of-type {background-color: lightpink;}
+#summer p:nth-of-type(2) {background-color: lightcoral;}
+#summer p:nth-of-type(2n) {color: rgb(35, 146, 220);}  /* 짝수번째 */
+#summer p:nth-of-type(2n+1) {color: rgb(126, 4, 142);}
+#summer p:nth-last-of-type(2n+1) {color: rgb(16, 12, 138);}
+
+/* ========================= 8. 부정 선택자 ====================== */
+#fall :not(p:first-of-type) {color:brown;}
