@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>텍스트 관련 스타일(text~)</h1>
+
+    <h3>1. color : 텍스트의 색상 지정</h3>
+    <pre>
+        선택자 {
+            color : 색상명|16진수|rgb(x,x,x)|rgba(x,x,x,x)|hsl(x,x,x)|hsla(x,x,x,x)
+        }
+    </pre>
+
+    <!------------------- style ------------------->
+    <style>
+        pre {
+            color:aqua;
+            color:#FF00DD;
+            color:rgb(0,84,255);
+            color:rgba(0,84,255,0.2);  /* 1: 불투명, 0:투명*/
+            color:hsl(0, 94%, 33%);
+            color:hsla(0, 94%, 33%, 0.5);
+        }
+    </style>
+
+    <hr>
+
+    <h3>2. text-decoration : 텍스트에 줄을 긋거나 줄을 없앨 때 사용</h3>
+    <pre>
+        선택자 {
+            text-decoration: none|underline|overline|line-through;
+        }
+    </pre>
+
+    <ul>
+        <li id="td1">텍스트 영역 아래 줄 긋기</li>
+        <li id="td2">텍스트 영역 중간에 줄 긋기</li><br>
+        <li id="td3">텍스트 영역 위에 줄 긋기</li>
+    </ul>
+
+    <a href="https://google.com" target="_blank">구글 사이트</a>
+
+    <!------------------- style ------------------->
+    <style>
+        #td1 {text-decoration: underline;}
+        #td2 {text-decoration: line-through;}
+        #td3 {text-decoration: overline;}
+        a {text-decoration: none; color:black;}
+    </style>
+
+    <hr>
+
+    <h3>3. text-transform : 영문 텍스트의 대소문자 변환</h3>
+    <pre>
+        선택자 {
+            text-transform : uppercase|lowercase|capitalize;
+        }
+    </pre>
+
+    <ol type="a" start="5">
+        <li id="tt1">uppercase : 모든 영문자를 대문자로</li>
+        <li id="tt2">LOWERCASE : 모든 영문자를 소문자로</li>
+        <li id="tt3">capitalize : 영문자의 first text만 대문자로</li>
+    </ol>
+
+    <!------------------- style ------------------->
+    <style>
+        #tt1 {text-transform: uppercase;}
+        #tt2 {text-transform: lowercase;}
+        #tt3 {text-transform: capitalize;}
+    </style>
+
+    <h3>4. text-shadow : 텍스트에 그림자 효과</h3>
+    <pre>
+        선택자 {
+            text-shadow : 가로거리(x) 세로거리(y) [번짐정도] [색상];
+        }
+    </pre>
+
+    <div>
+        <span class="shadow" id="ts1">HTML</span><br><br>
+        <span class="shadow" id="ts2">HTML</span><br><br>
+        <span class="shadow" id="ts3">HTML</span>
+    </div>
+
+    <!------------------- style ------------------->
+    <style>
+        .shadow {
+            font-size: 50px;
+            font-weight: 900;
+        }
+        #ts1{
+            color :orangered;
+            /* text-shadow: 5px 5px; */
+            text-shadow: 5px -5px 10px rgb(244, 196, 84);
+        }
+        #ts2 {
+            color: white;
+            text-shadow: 0 0 10px black;
+        }
+        #ts3 {
+            text-shadow: 0 0 4px gray,
+                         0 -5px 4px rgb(231, 212, 128),
+                         0 -10px 8px orange,
+                         0 -15px 14px orangered,
+                         0 -20px 20px red;
+        }
+
+    </style>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
