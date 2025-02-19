@@ -14,45 +14,49 @@
               표테두리와 셀테두리 합치기
 
             * border-spacing : 간격
-              표테두리와 셀테두리의 간격
+              셀사이의 간격
             
-            * table-layout: fixed
+            * table-layout: auto|fixed
+              안의 내용에 따라 자동으로 셀의 크기 결정(테이블도 자동으로 설정) | 
+              안의 내용과 상관없이 테이블의 크기 고정
 
-            * vertical-align: top|middle|bottom
+            * vertical-align: top|middle(기본값)|bottom
               세로측의 글씨 정렬
         }
     </pre>
 
     <table>
+        <caption>[표 1]웹 브라우저의 종류</caption>
         <thead>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
+                <th>브라우저명</th>
+                <th>제조사</th>
+                <!-- <th>홈페이지홈페이지홈페이지홈페이지홈페이지홈페이지홈페이지
+                    홈페이지홈페이지홈페이지홈페이지홈페이지홈페이지홈페이지</th> -->
+                <th>homepagehomepagehomepagehomepagehomepagehomepagehomepagehomepagehomepagehomepagehomepagehomepagehomepagehomepage</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>Chrome</td>
+                <td>Google</td>
+                <td>https://google.com</td>
             </tr>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>Edgi</td>
+                <td>MS</td>
+                <td>https://microsoft.com</td>
             </tr>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>safari</td>
+                <td>Apple</td>
+                <td>https://apple.com</td>
             </tr>
         </tbody>
         <tfoot>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td colspan="2">총브라우저 수</td>
+                <td>3</td>
             </tr>
         </tfoot>
     </table>
