@@ -1,0 +1,44 @@
+div {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    padding: 10px;
+    border-width: 3px;
+}
+#test1 {
+    border-style: dotted;
+    border-top-width: 10px;
+}
+#test2 {
+    box-shadow: 5px 5px 10px 5px gray;
+}
+#test3 {
+    border-style: dashed double solid dotted;
+    border-width: 5px;
+}
+#test4 {
+    border-style: dashed;
+    border-left-color: red;
+}
+#test5 {
+    border-style: groove;
+    border-width: 10px;
+}
+#test6 {
+    border-style: ridge;
+    border-width: 10px;
+}
+#test7 {
+    border-style: inset;
+    border-width: 10px;
+}
+#test8 {
+    border-style: outset;
+    border-width: 10px;
+}
+#test9 {
+    border-style: solid;
+    border-radius: 20px;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}

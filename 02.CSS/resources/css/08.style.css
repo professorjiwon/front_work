@@ -1,0 +1,32 @@
+.test {
+    width: 100px;
+    height: 100px;
+    border: 1px solid ;
+    background-color: yellowgreen;
+}
+#test1 {
+    padding: 100px;
+}
+#test2 {
+    padding-top: 20px;
+    padding-right: 100px;
+    padding-left: 50px;
+    padding-bottom: 10px;
+}
+#test3 {
+    padding: 20px 50px; /* 위,아래:20px | 좌,우:50px */
+    padding: 20px 50px 100px;   /* 위 | 좌,우  | 아래  */
+    padding: 100px 20px 50px 10px;  /* 위에서부터 시계방향으로 */
+}
+#test4 {
+    margin: 50px;
+}
+#test5 {
+    margin-left: 50px;
+    margin-bottom: 30px;
+}
+#test6 {
+    margin: 30px 50px;
+    margin: 10px 20px 30px 40px;
+    margin: auto;  /* 좌우를 기준으로 가운데 배치 */
+}
