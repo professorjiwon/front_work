@@ -1,0 +1,20 @@
+.display-test {
+    width: 150px;
+    height: 150px;
+    border: 1px solid;
+    margin-bottom: 10px;
+}
+.red {background-color: red;}
+.yellow {background-color: yellow;}
+.pink {background-color: pink;}
+.green {background-color: green;}
+.purple {background-color: purple;}
+
+/* block요소를 inline요소로 바꿔 줌 
+    가로, 세로 스타일 안됨
+*/
+.inline {display: inline;}
+
+.inline-block {display: inline-block;}
+
+.block {display: block;}

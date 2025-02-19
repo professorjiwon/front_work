@@ -23,3 +23,30 @@ body {
 #div3 {
     background-clip: content-box;
 }
+#bg-img {
+    width: 70%;
+    height: 800px;
+    border: 1px solid;
+
+    background-image: url(../img/img01.jpg);
+    background-repeat: no-repeat;  /* repeat (기본값) */
+    /* background-repeat: repeat-x; */
+    /* background-repeat: repeat-y; */
+    background-size: contain; /* 해당 요소안에 이미지가 모두 보이게 */
+    background-size: cover;  /* 해당 요소안에 이미지가 꽉 차게(나머지부분 잘린다) */
+    background-size: 300px;  /* 가로길이(세로는 원래 이미지의 비율에 맞게) */
+    background-size: 300px 300px;  /* 가로길이 세로길이 */
+    background-size: 50%;
+    background-size: 50% 50%;
+    background-size: auto;
+
+    background-position: left top;
+    background-position: center bottom;
+    background-position: center center;
+    background-position: 20% 30%;
+
+    background-attachment: fixed; 
+}
+/*
+background: 색상 url(..) no-repeat center center / 사이즈
+*/
