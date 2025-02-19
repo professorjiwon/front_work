@@ -42,3 +42,15 @@ div {
     border-top-left-radius: 50px;
     border-bottom-right-radius: 50px;
 }
+#test10 {
+    border: 5px dotted pink;
+}
+#btn {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: coral;
+}
+#btn:hover {
+    background-color: cadetblue;
+}
