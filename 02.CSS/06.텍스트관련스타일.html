@@ -74,6 +74,8 @@
         #tt3 {text-transform: capitalize;}
     </style>
 
+    <hr>
+
     <h3>4. text-shadow : 텍스트에 그림자 효과</h3>
     <pre>
         선택자 {
@@ -109,8 +111,69 @@
                          0 -15px 14px orangered,
                          0 -20px 20px red;
         }
-
     </style>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <hr>
+
+    <h3>5. text-align : 텍스트 정렬</h3>
+    <pre>
+        선택자 {
+            text-align:left(기본값)|right|center|justify
+        }
+    </pre>
+
+    <h4>왼쪽정렬(기본값)</h4>
+    <p><span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero repellendus laudantium et, at non animi modi rem minus error quisquam repudiandae iure nesciunt sequi ad! Optio quaerat atque exercitationem nulla.</span><span>Ducimus explicabo repellat architecto. Aliquid ea reprehenderit sit hic obcaecati quod, beatae necessitatibus cumque. Sint ab, ea velit ducimus impedit optio a, assumenda iste, nobis veritatis possimus. Asperiores, nesciunt aliquid!</span></p>
+    
+    <h4>오른쪽정렬</h4>
+    <p id="right"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, alias! Quisquam, porro, consequatur iure distinctio assumenda excepturi velit optio dolore asperiores quae deserunt! Ipsum deserunt dolorum est, eaque qui ad.</span><span>Fugiat aspernatur deleniti eligendi. Odio, recusandae incidunt. Vitae provident deleniti perferendis fugiat porro? Odit eligendi esse debitis perferendis, harum laboriosam, nostrum corrupti rerum repellat facilis commodi ut ex! Fugiat, eaque.</span></p>
+    
+    <h4>가운데정렬</h4>
+    <p id="center"><span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi laboriosam veniam sint facere explicabo assumenda eaque asperiores dicta, sunt ipsum voluptatum fuga expedita ullam ex labore nisi quam? Sit, delectus.</span><span>Sapiente vitae totam incidunt omnis alias nam. Nisi rem eius in earum quaerat, culpa architecto, possimus, ipsum unde eos ullam est enim dolorem rerum accusantium voluptatibus soluta. Dicta, sit necessitatibus?</span></p>
+    
+    <h4>양쪽정렬</h4>
+    <p id="justify"><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore quidem, reiciendis blanditiis cupiditate iure voluptatibus adipisci. Quos esse tempore, quibusdam eveniet recusandae consectetur totam dolore reiciendis sint, impedit neque nulla.</span><span>Nostrum quis nihil libero officiis sint beatae magni praesentium, error dicta sit molestias facere maiores consequuntur deserunt ex nam ut culpa asperiores. Asperiores blanditiis iusto placeat suscipit, expedita nemo eum.</span></p>
+
+    <!------------------- style ------------------->
+    <style>
+        #right { text-align: right;}
+        #center { text-align : center;}
+        #justify { text-align : justify;}
+    </style>
+
+    <hr>
+
+    <h3>6. line-height : 줄 간격 조절할 때</h3>
+    <pre>
+        선택자 {
+            line-height: normal|px|em|%;
+        }
+    </pre>
+
+    <h4>px 고정길이 간격</h4>
+    <p id="lineH1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, totam? Amet libero unde dolorem magnam esse ea necessitatibus expedita suscipit vitae dolores voluptatum non consequatur obcaecati, neque, inventore error. Quod?</p>
+    
+    <h4>em 가변길이 간격</h4>
+    <p id="lineH2">Obcaecati adipisci impedit labore dicta nihil quia magnam reiciendis enim consectetur! Consectetur aliquid minus nam aut ad fugit at quam quasi omnis consequuntur. Officia voluptatibus consectetur quo et harum recusandae?</p>
+    
+    <h4>% 비율 간격</h4>
+    <p id="lineH3">Ipsam asperiores voluptatem provident laborum atque quas magnam itaque earum sequi sed aspernatur ad est, deserunt accusantium deleniti repellendus voluptates tenetur alias consequatur quisquam vitae? Laboriosam nam cumque nesciunt quas.</p>
+
+    <div id="lineDiv">글씨 넣기</div>
+
+    <!------------------- style ------------------->
+    <style>
+        #lineH1 {line-height: 30px;}
+        #lineH2 {line-height: 3em;}
+        #lineH3 {line-height: 200%;}
+
+        #lineDiv {
+            width: 200px;
+            height: 200px;
+            border: 1px solid;
+            line-height: 200px;
+            text-align:center;
+        }
+    </style>
 </body>
 </html>
