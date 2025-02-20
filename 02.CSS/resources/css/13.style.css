@@ -1,0 +1,62 @@
+.position {border: 1px solid;}
+.ye {background: yellow;}
+.yg {background: yellowgreen;}
+.red {background: red;}
+
+.outer{position: relative;}
+
+#first {
+    width: 300px;
+    height: 300px;
+}
+#second {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 50px;
+    left : 50px;
+}
+#third {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+}
+#fixed-area {
+    width: 100px;
+    height: 100px;
+    /* position: fixed; */
+}
+
+.outer2 {position: relative;}
+.z-index {
+    border: 1px solid;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+}
+#z1 {
+    top:100px;
+    left: 100px;
+    z-index: 7;
+}
+#z2 {
+    top: 50px;
+    left: 50px;
+    z-index: 10;
+}
+#z3{
+    z-index: 100;
+}
+.visi {
+    width: 100px;
+    height: 100px;
+}
+
+.float-test {
+    border: 1px solid;
+    width: 50px;
+    height: 50px;
+    float: left;  /* right */
+}

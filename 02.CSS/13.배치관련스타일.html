@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="resources/css/13.style.css" rel="stylesheet">
+    <title>배치관련 스타일</title>
+</head>
+<body>
+    <h1>배치 관련 스타일</h1>
+    <h3>position: relative(상대 위치) 와 absolute(절대 위치)</h3>
+
+    <div class="outer">
+        <div class="position ye" id="first">1번째 자식</div>
+        <div class="position yg" id="second">2번째 자식</div>
+        <div class="position red" id="third">3번째 자식</div>
+    </div>
+
+    <h3>position: fixed(고정 위치)</h3>
+    <div class="position red" id="fixed-area">고정위치</div>
+    <!-- <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> -->
+
+    <hr>
+
+    <h3>z-index : 요소들을 순서대로 위로 쌓는 속성</h3>
+    <p>번호가 높을수록 앞에 위치 함</p>
+    <div class="outer2">
+        <div class="z-index ye" id="z1">1요소</div>
+        <div class="z-index yg" id="z2">2요소</div>
+        <div class="z-index red" id="z3">3요소</div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <hr>
+
+    <h3>visibility : 특정 요소를 보이거나 보이지 않게 하는 속성</h3>
+
+    <div class="visi ye">1요소</div>
+    <div class="visi yg" style="visibility: hidden;">2요소</div>
+    <!-- <div class="visi yg" style="display: none;">2요소</div> -->
+    <div class="visi red">3요소</div>
+
+    <p>visibility: hidden은 공간을 차지하지만, display: none은 공간마저 사라진다</p>
+
+    <hr>
+
+    <h3>float</h3>
+    <p>페이지 내의 요소들을 화면으로부터 띄워서 왼쪽 또는 오른쪽으로 차곡차곡 쌓는 속성</p>
+    
+    <div class="float-test">요소1</div>
+    <div class="float-test">요소2</div>
+    <div class="float-test">요소3</div>
+    <div class="float-test">요소4</div>
+    <div class="float-test">요소5</div>
+    <br clear="both"> 
+    <p>옆으로 쌓기 해제</p>
+</body>
+</html>
