@@ -1,0 +1,31 @@
+/* body */
+body {
+    width: 1000px;
+}
+/* header */
+header {
+    height: 80px;
+    line-height: 80px;
+}
+/* 본문 */
+section {
+    float: left;
+    width: 700px;
+    height: 500px;
+    background-color: beige;
+}
+/* aside */
+aside {
+    float: left;
+    width: 300px;
+    height: 300px;
+    background-color: aquamarine;
+    text-align: center;
+    padding-top: 200px;
+}
+/* footer */
+footer {
+    clear: both;
+    height: 50px;
+    line-height: 50px;
+}

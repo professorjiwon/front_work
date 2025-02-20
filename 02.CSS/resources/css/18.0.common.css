@@ -1,0 +1,15 @@
+*{
+    margin: 0 auto;
+}
+header {
+    background-color: rgb(26, 87, 118);
+    text-align: center;
+}
+header>h1 {
+    color: white;
+}
+footer {
+    background-color: rgb(26, 87, 118);
+    text-align: center;
+    color: white;
+}

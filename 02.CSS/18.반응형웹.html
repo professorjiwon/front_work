@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+    * CSS 미디어 쿼리(media query)
+      단말기의 유형, 화면 해상도, 뷰포트 너비 등에 따라 사이트의 스타일을 적용할 수 있다
+
+    * 미디어 유형(Media Type) - 단말기 유형
+      - all : 모든장치
+      - print : 인쇄 결과물 및 출력 미리보기 화면에 표시 중인 문서
+      - screen : 스크린 화면
+      - speech : 음성 합성장치
+    
+    * 논리연산자와 함께 사용
+      - and : and 연산자
+      - not : 쿼리의 반대를 반환
+      - only : 전체 쿼리가 일치할 경우에만 스타일 적용
+      - ,(쉼표) : or 연산자
+    
+    * 적용 방법
+      - link를 이용하는 방법 : head에 넣는다
+      - @media를 이용하는 방법 : style에 넣는다
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="resources/css/18.0.common.css" rel="stylesheet">
+    <link href="resources/css/18.1.pc.css" rel="stylesheet" 
+        media="screen and (min-width:1000px)">
+    <link href="resources/css/18.2.tablet.css" rel="stylesheet"
+        media="screen and (min-width:601px) and (max-width:999px)">
+    <link href="resources/css/18.3.mobile.css" rel="stylesheet"
+        media="screen and (max-width:600px)">
+    <title>반응형 웹</title>
+</head>
+<body>
+    <header>
+        <h1>반응형 웹</h1>
+    </header>
+    <section>
+        <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis eum qui beatae sed accusamus unde ratione, distinctio cupiditate nulla sint consectetur, sit debitis tenetur velit, fugit possimus minus nesciunt voluptates!
+        Distinctio quisquam nesciunt culpa neque? Optio veritatis earum repellat corrupti. Illo itaque cumque nulla maiores laborum molestiae, amet fugiat facere exercitationem dolore, iusto debitis deleniti numquam quidem. Maxime, suscipit quae.
+        Quae, repellat adipisci? Earum quia velit maiores corrupti quam deleniti rerum beatae aliquid maxime sunt obcaecati, ex aliquam error placeat quibusdam amet? Nulla officia odit quam ea veritatis atque quidem.
+        Hic possimus velit tenetur animi enim aliquam dolore laudantium natus laborum ipsum, repellendus suscipit aspernatur iusto error. Voluptate, beatae ab at distinctio possimus inventore in adipisci, ipsam veniam odio dolores?</h4>
+    </section>
+    <aside>
+        <h4>사이드바</h4>
+    </aside>
+    <footer>
+        <p>TJOEUN</p>
+    </footer>
+</body>
+</html>
