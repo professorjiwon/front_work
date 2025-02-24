@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>데이터 입/출력</title>
+    <style>
+        .area {
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <h1>자바스크립트에서의 데이터 입출력</h1>
+    <p>
+        * window : 자바스크립트 내장 객체로 브러우저 창이 열릴때마다 하니씩 만들어지는 객체<br>
+                    브라우저 창 안에 존재하는 모든 요소들의 최상위 객체(생략가능)<br><br>
+        * document : 웹 문서마다 하니씩 만들어지는 객체(html문서에 대한 정보들을 다지고 있음)
+    </p>
+
+    <h2>1. 데이터 출력하는 구문</h2>
+    <p>
+        1) [window.]alter("알림창에 출력할 문구");<br>
+        2) [window.]console.log("콘솔창에 출력할 문구");<br>
+        3) document.write("화면상에 출력할 문구");<br>
+        4) 선택한요소.innerHTML|innerText = "요소에 출력할 문구";
+    </p>
+
+    <h3>3) document.write("화면상에 출력할 문구");</h3>
+    <button onclick="documentWrite();">화면상에 출력</button>
+
+    <script>
+        function documentWrite() {
+            // document.write("안녕하세요");
+            // document.write("<b>안녕하세요<b><br><h2>반가워요</h2>");
+            /*
+            document.write("<table border=1>"
+                                + "<tr>"
+                                    + "<td>데이터1</td>"
+                                    + "<td>데이터2</td>"
+                                + "</tr>"
+                            + "</table>");
+            */
+            var data1 = "<table border=1>";
+                data1 += "<tr>";
+                data1 += "<td>데이터1</td>";
+                data1 += "<td>데이터2</td>";
+                data1 += "</tr>";
+                data1 += "</table>";
+            document.write(data1);
+        }
+    </script>
+
+    <br><br>
+
+    <h3>선택한요소.innerHTML|innerText = "요소에 출력할 문구";</h3>
+    <div id="area1" class="area">
+        자바스크립트에서 어떤 요소(element)안의 값(content)을 가지고 온다거나
+        변경하고자 할 때 <b>innerHTML, innerText</b>라는 속성에 접근
+    </div>
+
+    <button onclick="tagVaule();">확인</button>
+
+    <script>
+        function tagVaule() {
+            var divEle = document.getElementById('area1');
+
+            console.log(divEle);  // 해당 요소를 객체로 볼 때
+            console.dir(divEle);  // 해당 요소의 디렉토리 구조를 보고자 할 때(속성들의 정보)
+
+            console.log("id : ", divEle.id);
+            console.log("class name : ", divEle.className);
+
+            console.log("innerHTML : ", divEle.innerHTML); // html태그까지 포함
+            console.log("innerText : ", divEle.innerText); // text만 가지고 옴(html 태그 포함안함)
+
+            // 해당 요소의 속성값 변경 가능 :  속성에 접근 후 대입을 통해 변경
+
+            // divEle.innerHTML = "<h2>inner로 속성값 변경</h2>";
+            // divEle.style.color = "red";
+
+            divEle.innerText = "<h2>inner로 속성값 변경</h2>";
+            divEle.style.color = "red";
+        }
+    </script>
+
+    <hr>
+
+    <h2>2. 데이터 입력받는 구문(변수에 기록 가능)</h2>
+    <p>
+        1) 변수 = [window.]confirm("질문내용");<br>
+        2) 변수 = [window.]prompt("질문내용");<br>
+        4) 변수 = 선택한요소.속성(id, className, innerHTML, innerText ...); <br>
+        5) 변수 = 선택한input요소.value;
+    </p>
+
+    <h3>1) [window.]confirm("질문내용"); </h3>
+    <p>
+        confirm 호출시 "질문내용"과 "확인/취소"버튼이 존재하는 알림창 발생<br>
+        확인 버튼 클릭시 true, 취소 버튼 클릭시 false 반환
+    </p>
+
+    <button onclick="testConform();">클릭</button>
+
+    <script>
+        function testConform() {
+            var result = confirm("배고프면 확인, 아니면 취소를 누르세요");
+            console.log(result);
+        }
+    </script>
+
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

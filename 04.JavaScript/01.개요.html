@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 외부 파일 script 링크 -->
+    <script src="resources/js/01.javascript.js" rel="javascript"></script>
     <title>자바스크립트 개요</title>
 </head>
 <body>
@@ -48,5 +50,63 @@
         <li>웹에 특화된 기술임=>내부에서 제공되는 기능이 제한적</li>
         <li>html소스코드에서 같이 작성하면 외부에 공개됨 => 보안의 취약점 발생</li>
     </ul>
+
+    <hr>
+
+    <h3>* 자바 스크립트 사용방법</h3>
+    <ol>
+        <li>inline(인라인) 방식 : 태그 내에 간단한 소스코드를 작성하여 실행</li>
+        <li>internal(내부) 방식 : html문서 내에 소스코드를 작성하여 실행</li>
+        <li>external(외부) 방식 : 별도의 ??.js 파일에 소스코드를 작성하여 실행</li>
+    </ol>
+
+    <h4>1) inline 방식</h4>
+    <p>
+        태그 내에 간단한 소스코드를 작성하여 실행<br>
+        [표현법]<br>
+        <태그 on이벤트명="해당 요소에 해당 이벤트가 발생하면 실행할 소드코드">
+    </p>
+    <button onclick="window.alert('알림창 출력!!!')">알림창 출력</button>
+    <button onclick="console.log('콘솔 출력 버튼 클릭!!!')">콘솔 출력</button>
+
+    <br><br>
+
+    <h4>2) internal 방식</h4>
+    <p>
+        html문서 내에 소스코드를 작성하여 실행<br>
+        script태그를 넣는 위치는 head, body 어디든 상관없음<br>
+    </p>
+
+    <button id="btn">알림창 출력</button>
+    <button onclick="btnClick();">콘솔 출력</button>
+
+    <script>
+        // 이벤트를 부여하고자하는 요소를 선택하여 변수에 담아두기
+        var btn1 = document.getElementById('btn');
+        console.log(btn1);
+
+        // 해당 요소에 클릭이벤트 발생시 실행할 함수(이벤트 핸들러) 정의
+        btn1.onclick = function() {
+            window.alert("버튼클릭!");
+        };
+
+        function btnClick() {
+            console.log("버튼 클릭!");
+        }
+    </script>
+
+    <br><br>
+
+    <h4>3) external 방식</h4>
+    <p>
+        별도의 ??.js 파일에 소스코드를 작성하여 실행<br>
+        head에 파일의 위치를 알려줌<br>
+        [파일 위치 표현법]<br>
+        &lt;script src="파일위치" rel="javascript"&gt;&lt;/script&gt;
+    </p>
+
+    <button onclick="test();">알림창 출력</button>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </body>
 </html>
