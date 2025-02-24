@@ -5,3 +5,5 @@ a {
     text-decoration: none;
     color: black;
 }
+.navi a:link, .navi a:visited { color: white;}
+.navi a:hover{color: yellow;}
