@@ -224,7 +224,40 @@ div 안에
 주소 : 서울시 강남구 한국빌딩 801호
 출력
     </pre>
+ 
+    이름 : <input id="name"><br>
+    나이 : <input id="age"><br>
+    주소 : <input id="addr"><br><br>
 
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div id="area6"></div>
+
+    <button onclick="exPropmt();">실습문제(propmt)</button>&emsp;
+    <button onclick="exInput();">실습문제(input)</button>
+
+    <script>
+        var divEl6 = document.getElementById('area6');
+
+        function exPropmt() {
+            var name = prompt("이름 입력");
+            var age = prompt("나이 입력");
+            var addr = prompt("주소 입력");
+
+            divEl6.innerHTML = ('이름 : ' + name
+                            + '<br>나이 : ' + age
+                            + '<br>주소 : ' + addr
+            );
+        }
+
+        function exInput() {
+            var name = document.getElementById('name').value;
+            var age = document.getElementById('age').value;
+            var addr = document.getElementById('addr').value;
+
+            divEl6.innerHTML = ('이름 : ' + name
+                            + '<br>나이 : ' + age
+                            + '<br>주소 : ' + addr
+            );
+        }
+    </script>
 </body>
 </html>
