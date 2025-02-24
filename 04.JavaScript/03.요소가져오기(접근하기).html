@@ -132,6 +132,118 @@
             <label for="sport">운동</label>
         </fieldset>
     </form>
+    <br>
+    <div class="area" id="area3"></div>
+    <button onclick="accessName();">name으로 접근</button>
+
+    <script>
+        function accessName() {
+            // name 속성값으로 요소 가져올 때
+            // document.getElementsByName('name 속성값') => 선택된 요소들의 객체를 배열에 담아 반환
+            var hobby = document.getElementsByName("hobby");
+
+            console.log(hobby);
+
+            var divEle3 = document.getElementById('area3');
+            divEle3.innerHTML = "";
+
+            for(var i=0; i<hobby.length; i++) {
+                if(hobby[i].checked) {  // checked : 사용자가 체크를 하면 true가 반환
+                    divEle3.innerHTML += hobby[i].value + "<br>";
+                }
+            }
+        }
+    </script>
+
+    <br>
+
+    <h3>4) class를 이용하여 요소 가져오기</h3>
+    <div class="test area"></div>
+    <p class="test"></p>
+    <ul class="test">
+        <li></li>
+        <li></li>
+    </ul>
+    <pre class="test"></pre>
+
+    <button onclick="accessClass();">class로 접근</button>
+
+    <script>
+        function accessClass() {
+            // class로 요소 가져올 때
+            // document.getElementsByClassName('class 속성값') => 선택된 요소들의 객체를 배열에 담아 반환
+            var arr = document.getElementsByClassName("test");
+
+            console.log(arr);
+
+            for(var i=0; i<arr.length; i++) {
+                console.log(arr[i]);
+            }
+        }
+    </script>
+
+    <br>
+
+    <h3>5) 내가 원하는 요소 자유자재로 가져오기(선택자 활용)</h3>
+
+    <div id="test1"></div>
+    <div class="test">
+        <h2>안녕</h2>
+        <h2>잘가</h2>
+    </div>
+    <span>월요일이다</span>
+    <h2>또 봐요</h2>
+
+    <button onclick="accessSelector();">선택자로 선택</button>
+
+    <script>
+        function accessSelector() {
+            // 선택자를 이용하여 요소 가져오기
+            // document.querySelector("선택자") => 선택된 첫번째 요소 객체 하나만 반환
+            // document.querySelectorAll("선택자") => 선택된 요소객체들 모두를 배열에 담아 반환
+            var divEl1 = document.querySelector('#test1');
+            var h2El = document.querySelector('.test>h2');
+            var spanEl = document.querySelector('.test+span');
+
+            console.log(divEl1);
+            console.log(h2El);
+            console.log(spanEl);
+
+            var h2El2 = document.querySelectorAll('.test>h2');
+            for(var i=0; i<h2El2.length; i++) {
+                console.log(h2El2[i]);
+            }
+        }
+    </script>
+
+    <div>
+        <p class="cls1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam cumque, odio quasi cum consectetur amet vero obcaecati nemo delectus dolores quod error incidunt autem rerum earum ipsam in iusto dolor.</p>
+        <p id="p2">Inventore, iusto expedita voluptatum sint voluptatibus voluptates distinctio impedit recusandae nostrum atque nihil qui aut saepe, tenetur tempora. Quisquam perspiciatis aperiam quas labore, hic explicabo! Ipsum delectus adipisci nihil perspiciatis.</p>
+        <p class="cls1">Odit expedita perferendis unde impedit pariatur? Eos illo quia est voluptatibus reprehenderit eaque maiores ratione nisi odit fuga dolorem dolores qui sed, aliquam sint rerum atque quam repellendus sequi error.</p>
+    </div>
+
+    <button onclick="select();">querySelector</button>&emsp;
+    <button onclick="selectAll();">querySelectorAll</button>
+
+    <script>
+        function select() {
+            var p2 = document.querySelector('#p2');
+            p2.style.color='hotpink';
+        }
+
+        function selectAll() {
+            var cls1 = document.querySelectorAll('.cls1');
+            for(var i=0; i<cls1.length; i++) {
+                cls1[i].style.color='olive';
+            }
+        }
+
+    </script>
+
+
+
+
+
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </body>
 </html>
