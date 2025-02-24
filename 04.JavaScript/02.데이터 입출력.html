@@ -90,8 +90,8 @@
     <p>
         1) 변수 = [window.]confirm("질문내용");<br>
         2) 변수 = [window.]prompt("질문내용");<br>
-        4) 변수 = 선택한요소.속성(id, className, innerHTML, innerText ...); <br>
-        5) 변수 = 선택한input요소.value;
+        3) 변수 = 선택한요소.속성(id, className, innerHTML, innerText ...); <br>
+        4) 변수 = 선택한input요소.value;
     </p>
 
     <h3>1) [window.]confirm("질문내용"); </h3>
@@ -101,15 +101,129 @@
     </p>
 
     <button onclick="testConform();">클릭</button>
+    <div id="area2"></div>
 
     <script>
         function testConform() {
-            var result = confirm("배고프면 확인, 아니면 취소를 누르세요");
+            var result = confirm("자바스크립트가 재미있나요?");
             console.log(result);
+
+            if(result) {
+                console.log("엄청 재미있어요");
+            } else {
+                console.log("어려워요");
+            }
+
+            var divEl2 = document.getElementById('area2');
+            if(result) {
+                divEl2.innerHTML = "<h3>엄청 재미있어요</h3>";
+            } else {
+                divEl2.innerHTML = "<h3>어려워요</h3>";
+            }
+        }
+    </script>
+
+    <br>
+
+    <h3>2) [window.]prompt("질문내용");</h3>
+    <p>
+        prompt호출시 "질문내용"과 입력할 수 있는 "텍스트상자"와 "확인/취소" 버튼이 보여지는 알림창 발생<br>
+        확인 버튼 클릭시 텍스트상자에 입력된 값이 문자열로 반환<br>
+        취소 버튼 클릭시 null값 반환
+    </p>
+
+    <button onclick="testPrompt();">클릭</button>
+    <div id="area3"></div>
+
+    <script>
+        function testPrompt() {
+            var name = prompt("이름을 입력하세요");
+            var age = prompt("나이 입력");
+
+            console.log(name);
+
+            var divEl3 = document.getElementById("area3");
+            divEl3.innerHTML = "<b>" + name + "</b>님의 나이는 <b>" + age + "</b>살 입니다";
+        }
+    </script>
+
+    <br>
+
+    <button onclick="testPrompt2();">숫자만 입력</button>
+
+    <ul id="area4">
+    </ul>
+
+    <script>
+        function testPrompt2() {
+            // 사용자가 넣은 값(예> 5)만큼 반복문 실행
+
+            var num = prompt("숫자만 입력하세요");
+
+            /*  맨 마지막 목록5 하나만 나옴
+            var ulEle4 = document.getElementById('area4');
+            for(var i=1; i<=num; i++) {
+                ulEle4.innerHTML = "<li>목록" + i + "</li>";
+            }
+            */
+
+            var str = "";
+            for(var i=1; i<=num; i++) {
+                str += "<li>목록" + i + "</li>";
+            }
+            /*
+            var ulEle4 = document.getElementById('area4');
+            ulEle4.innerHTML = str;
+            2줄을 한줄로
+            */
+            document.getElementById('area4').innerHTML = str;
+        }
+    </script>
+
+    <br>
+
+    <h3>4) 변수 = 선택한input요소.value;</h3>
+    아이디 : <input id="userId"><br>
+    비밀번호 : <input type="password" id="userPW"><br>
+
+    <button onclick="testInput();">로그인</button><br><br>
+
+    <input id="area5">
+
+    <script>
+        function testInput() {
+            /*
+            var id = document.getElementById('userId');
+            var pw = document.getElementById('userPW');
+
+            console.log(id);        // 객체
+            console.log(id.value);  // input안에 넣은 값 가져오기
+
+            var idValue = id.value;
+            var pwValue = pw.value;
+            */
+
+            var idValue = document.getElementById('userId').value;
+            var pwValue = document.getElementById('userPW').value;
+
+            document.getElementById('area5').value = idValue + ', ' + pwValue;
         }
     </script>
 
 
+    <h3>실습문제</h3>
+    <pre>
+1) propmt 사용
+2) input 태그 사용
+
+이름, 나이, 주소를 입력받아
+
+div 안에
+이름 : 홍길동
+나이 : 23살
+주소 : 서울시 강남구 한국빌딩 801호
+출력
+    </pre>
 
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </body>
