@@ -34,6 +34,7 @@
             // document.write("안녕하세요");
             // document.write("<b>안녕하세요<b><br><h2>반가워요</h2>");
             /*
+            document.write("<table border=1><tr><td>데이터1</td><td>데이터2</td></tr></table>");
             document.write("<table border=1>"
                                 + "<tr>"
                                     + "<td>데이터1</td>"
@@ -41,11 +42,12 @@
                                 + "</tr>"
                             + "</table>");
             */
+            
             var data1 = "<table border=1>";
-                data1 += "<tr>";
-                data1 += "<td>데이터1</td>";
-                data1 += "<td>데이터2</td>";
-                data1 += "</tr>";
+                data1 +=    "<tr>";
+                data1 +=        "<td>데이터1</td>";
+                data1 +=        "<td>데이터2</td>";
+                data1 +=    "</tr>";
                 data1 += "</table>";
             document.write(data1);
         }
@@ -171,12 +173,13 @@
             for(var i=1; i<=num; i++) {
                 str += "<li>목록" + i + "</li>";
             }
-            /*
+/*
             var ulEle4 = document.getElementById('area4');
             ulEle4.innerHTML = str;
             2줄을 한줄로
-            */
+*/
             document.getElementById('area4').innerHTML = str;
+            
         }
     </script>
 
@@ -207,6 +210,7 @@
             var pwValue = document.getElementById('userPW').value;
 
             document.getElementById('area5').value = idValue + ', ' + pwValue;
+            
         }
     </script>
 
