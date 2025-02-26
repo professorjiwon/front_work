@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 메소드</title>
+    <style>
+        .area {
+            border: 1px solid;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h3>* 객체 메소드 속성</h3>
+    <p>객체의 속성 중 함수 자료형인 속성을 메소드라고 부름</p>
+    <button onclick="test1();">실행확인</button>
+    <div id="div1" class="area"></div>
+
+    <script>
+        function test1() {
+            const div1 = document.getElementById('div1');
+            let name = '홍길동';
+
+            const dog = {
+                name : '누렁이',
+                kind : '똥개',
+                eat : function(food) {
+                    div1.innerHTML += 'eat메소드가 호출됨<br>';
+                    div1.innerHTML += `${food}<br>`;
+                    // 속성명을 호출하면 지역속성을 의미
+                    // 지역속성가 없다면 전역속성를 의미
+                    // dog객체 들어있는 속성을 호출하려면 this. 를 붙여야 됨
+                    div1.innerHTML += `${this.kind}종류인 ${this.name}가 ${food}를 먹고 있어요<br><hr>`;
+                }
+            }
+
+            dog.eat('사료');
+
+            name = 'hong';
+            const age = 25;
+            // ES5
+            const p1 = {
+                name: name,
+                age: age,
+                fun1 : function() {
+                    const result = this.name.toUpperCase();
+                    div1.innerHTML += result + '!<br>';
+                },
+                setAge : function(fAge) {
+                    this.age = fAge;
+                    div1.innerHTML += `나이 : ${this.age}<br><hr>`;
+                }
+            };
+            p1.fun1();
+            p1.setAge(30);
+
+            // ES6
+            let p2 = {
+                name,
+                age,
+                fun1() {
+                    const result = this.name.toUpperCase();
+                    div1.innerHTML += result + '!!!<br>';
+                },
+                setAge(fAge) {
+                    this.age = fAge;
+                    div1.innerHTML += `나이 : ${this.age}<br>`;
+                }
+            };
+            p2.fun1();
+            p2.setAge(35);
+        }
+    </script>
+</body>
+</html>
