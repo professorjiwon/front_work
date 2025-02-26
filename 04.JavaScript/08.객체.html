@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체</title>
+    <style>
+        .area {
+            border: 1px solid;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>객체</h1>
+
+    <h3>* 객체 선언 및 사용</h3>
+    <p>
+        - 객체는 중괄호{}를 사용하여 생성<br>
+        - 중괄호 안에 객체 필요한 속성들 정의<br>
+        - '속성명:속성값'의 형태로 정의 (key:value)<br>
+        - 속성값으로는 모든 자료형의 값을 담을 수 있음
+    </p>
+
+    <pre>
+        변수 = {
+            속성명:속성값,
+            속성명:속성값,
+            속성명:속성값,
+            ...
+        }
+    </pre>
+
+    <button onclick="test1();">실행 확인</button>
+    <div id="area1" class="area"></div>
+
+    <script>
+        function test1() {
+            const product = {
+                pName : 'Mango',
+                price : 10000,
+                'kind' : 'fruit',
+                fruitKind : ['Lime', 'Peach', 'Berry']
+            };
+
+            console.log(product);
+        }
+    </script>
+</body>
+</html>
