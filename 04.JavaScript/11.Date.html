@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date</title>
+    <style>
+        .area {
+            border: 1px solid;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Date 내장 객체</h1>
+
+    <button onclick="test1();">확인</button>
+    <div id="div1" class="area"></div>
+
+    <script>
+        function test1() {
+            const today = new Date();  // 현재 날짜와 시간
+            console.log(today);
+
+            const date1 = new Date(2025, 2-1, 25);
+            console.log(date1);
+
+            const date2 = new Date(2025, 2-1, 10, 15, 14, 20);
+            console.log(date2);
+
+            const div1 = document.getElementById('div1');
+            div1.innerHTML = `현재날짜와 시간 : ${today}<br>`;
+            div1.innerHTML += `날짜 setting : ${date1}<br>`;
+            div1.innerHTML += `날짜와 시간 setting : ${date2}<br>`;
+
+            div1.innerHTML += `년도 : ${date1.getFullYear()}<br>`;
+            div1.innerHTML += `월 : ${today.getMonth()+1}<br>`;
+            div1.innerHTML += `일 : ${today.getDate()}<br>`;
+            div1.innerHTML += `요일 : ${today.getDay()}<hr>`;
+
+            const end = new Date(2025, 7-1, 21);
+            // div1.innerHTML += `종강일까지 ${end-today}`;  // 밀리세컨드
+            
+            /*
+            1s = 1000ms
+            1m = 60s = 60*1000ms
+            1h = 60m = 60*60s = 60*60*1000ms
+            1d = 24h = 24*60m = 24*60*60s = 24*60*60*1000ms
+            */
+            const dDay = `${(end-today) / (24*60*60*1000)}`;
+            div1.innerHTML += `종강일까지 ${Math.round(dDay)}일 남았습니다.`;
+        }
+    </script>
+</body>
+</html>

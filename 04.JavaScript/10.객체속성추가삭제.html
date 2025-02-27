@@ -95,6 +95,47 @@
 
     <hr>
 
-    <h3>* </h3>
+    <h3>* 생성자 함수</h3>
+    <p>
+        new 키워드를 이용하여 객체를 생성할 수 있는 함수(함수명의 첫글자는 대문자로)
+    </p>
+    <button onclick="test3();">실행확인</button>
+    <div id="div3" class="area"></div>
+
+    <script>
+        function test3() {
+            // 객체 5개 만들어서
+            // 배열에 넣고
+            // div3 출력(이름, 총점, 평균)
+            const student0 = new Student('홍길동',78,89,80,76);
+            const student1 = new Student('아무개',78,89,80,76);
+            const student2 = new Student('철옹성',78,89,80,76);
+            const student3 = new Student('박찬욱',78,89,80,76);
+            const student4 = new Student('최방실',78,89,80,76);
+            
+            const student = [student0, student1,student2,student3,student4];
+
+            const div3 = document.getElementById('div3');
+
+            for(i in student) {
+                div3.innerHTML += `이름 : ${student[i].name}, 총점 : ${student[i].sum()}, 평균 : ${student[i].avg()}<br>`;
+            }
+        }
+        function Student(name, java, oracle, html, css) {
+            this.name = name;
+            this.java = java;
+            this.oracle = oracle;
+            this.html = html;
+            this.css = css;
+
+            this.sum = function() {
+                return parseInt(this.java) + parseInt(this.oracle) + parseInt(this.html) +parseInt(this.css);
+            }
+
+            this.avg = function() {
+                return this.sum() / 4;
+            }
+        }
+    </script>
 </body>
 </html>
