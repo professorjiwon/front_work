@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>windows 객체</title>
+    <style>
+        .area {
+            width: 300px;
+            height: 100px;
+            border: 2px solid black;
+            color: red;
+            font-size: 50px;
+            text-align: center;
+            line-height: 100px;
+            font-weight: 900;
+        }
+    </style>
+</head>
+<ㅗ>
+    <h1>Window 객체</h1>
+    <p>
+        Window 객체는 자바스크립트의 최상위 객체이며 크게 BOM과 DOM으로 나뉨<br></br>
+        - BOM(Browser Object Model) : location, screen, navigator 객체, history객체<br>
+        - DOM(Document Object Model) : document
+    </p>
+
+    <h4>- [window.]open('url', '창이름', '창의 특성들');</h4>
+    <button onclick="test1();">네이버</button>
+
+    <script>
+        function test1() {
+            // window.open();
+            // window.open('https://www.naver.com', '네이버', 'width=700, height=500');
+
+            /*
+            * 특성들
+              창의 너비, 높이, 주소창여부, 툴바여부, 스크롤바 여부 등등
+
+              => px
+              width: 창의 너비
+              height: 창의 높이
+
+              => yes|no
+              resizeable : 창의 크기 조절 여부
+              location : 주소창
+              menubar : 메뉴바
+              scrollbar : 스크롤바
+              status : 상태표시줄
+
+              // 크롬 : 스크롤바 있음, resizable불가, 주소창 안됨, 상태표시줄 없음, 메뉴바 없음
+              
+            */
+            open('https://www.naver.com', '네이버', 'width=700, height=500, menubar=yes');
+        }
+    </script>
+
+    <br>
+
+    <h3>window 객체의 timer관련 메소드</h3>
+    <h4>- setTimeout(함수, 일정시간ms)</h4>
+    <p>내가 제시한 일정 시간 후에 딱 한번만 실행</p>
+
+    <button onclick="test2();">실행확인</button>
+    <script>
+        function test2() {
+            const myWindow = open();
+
+            myWindow.alert('1초 후에 이 페이지는 종료됩니다');
+
+            setTimeout(function() {
+                myWindow.close();
+            }, 1000);
+        }
+    </script>
+
+    <br>
+
+    <h4>- [window.]setInterval(함수, 일정시간ms)</h4>
+    <p>내가 지정한 시간 간격마다 "매번" 함수 실행</p>
+    <button onclick="test3();">실행확인</button>
+    <div id="div1" class="area"></div>
+
+    <script>
+        function test3() {
+            const div1 = document.getElementById('div1');
+
+            // let count = 1;
+            setInterval(function() {
+                // div1.innerHTML = count++;
+                const now = new Date();
+
+                let hour = now.getHours();
+                let min = now.getMinutes();
+                let sec = now.getSeconds();
+
+               // if(hour < 10) { hour = '0' + hour;}
+                hour = hour < 10 ? '0'+hour : hour;
+                min = min < 10 ? '0'+min : min;
+                sec = sec < 10 ? '0'+sec : sec;
+
+                div1.innerHTML = `${hour} : ${min} : ${sec}`;
+            }, 1000);
+        }
+    </script>
+
+    <hr>
+
+    <h2>* BOM(Brower Object Model)</h2>
+
+    <h3>location 객체</h3>
+    <p>브라우저 주소창과 관련된 객체</p>
+
+    <button onclick="console.log(location);">실행확인</button>
+    <br><br>
+
+    <button onclick="location.href='https://www.naver.com';">네이버</button>
+    <button onclick="location.assign('https://google.com');">구글로 이동</button>
+
+    <!-- history정보를 가지고 있지 않음 : 뒤로가가 안됨 -->
+    <button onclick="location.replace('https://www.tjoeun.co.kr/');">tjoeun</button>
+    <br><br>
+
+    <b>새탭에서 열기</b><br>
+    <button onclick="window.open('https://naver.com')">네이버로 이동</button>
+    <br><br>
+
+    <b>새로고침</b><br>
+    <!-- 페이지의 맨 상단을 보여줌 -->
+    <button onclick="location.href = location.href">새로고침</button>
+    
+    <!-- 현재 위치에서 새로고침-->
+    <button onclick="location.reload();">새로고침</button>
+
+    <br><br>
+
+    <b>screen 객체</b><br>
+    <button onclick="console.log(screen);">screen 객체 확인</button>
+    <br><br>
+
+    <b>navigator 객체</b><br>
+    <button onclick="console.log(navigator);">navigator 객체 확인</button>
+    <br><br>
+
+    <b>history 객체</b><br>
+    <button onclick="console.log(history);">history 객체 확인</button>
+    <br><br>
+
+    <hr>
+
+    <h2>* DOM(Document Object Model)</h2>
+    <p>
+        html에 있는 각각의 요소들을 노드(node)라고 함<br>
+        > 요소노드(Element Node) : 태그 그 자체를 의미<br>
+        > 텍스트노드(Text Node) : 태그 내에 있는 내용<br>
+          - 텍스트노드가 존재하는 요소노드(시작태그와 종료태그 한쌍) : div, h~, p, span,...<br>
+          - 텍스트노드가 존재하지 않는 요소노드(시작태그만) : input, img, br, hr, ...
+    </p>
+
+    <h3>* 노드(요소) 생성과 관련된 메소드</h3>
+
+    <h4>- 텍스트노드가 존재하는 노드 생성(시작태그와 종료태그)</h4>
+    <button onclick="test4();">요소 생성</button>
+    <div id="div4"></div>
+    <script>
+        function test4() {
+            // 동적 요소를 만드는 방법1. '문자열'로 만드는 방법
+            document.getElementById('div4').innerHTML = '<h4>안녕</h4>';
+
+            // 동적 요소를 만드는 방법2. document에서 제공하는 메서드를 이용하여 만듬
+            // 요소 생성 : document.createElement('태그');
+            let eleNode = document.createElement('h3');  // <h3></h3> 생성
+
+            // 텍스트 생성 : document.createTextNode('문자열');
+            let textNode = document.createTextNode('동적 문자열');
+
+            // 요소와 텍스트 결합
+            eleNode.appendChild(textNode);
+            console.log(eleNode);
+
+            document.getElementById('div4').appendChild(eleNode);
+            /*
+            eleNode는 객체라서 toString이 호출됨 [object HTMLHeadingElement] 출력
+            document.getElementById('div4').innerHTML += eleNode;
+            */
+        }
+    </script>
+
+    <h4>- 텍스트노드가 존재하지 않는 노드 생성(시작태그)</h4>
+    <button onclick="test5();">요소 생성</button>
+    <div id="div5"></div>
+    <script>
+        function test5() {
+            let img1 = document.createElement('img');  // <img>
+
+            img1.src = 'https://www.tjoeun.co.kr/images/head_mcl_logo.jpg?v=20190918';
+            img1.alt = '더조은로고';
+            img1.width = '180';
+            img1.height = '25';
+
+            console.log(img1);
+
+            document.getElementById('div5').appendChild(img1);
+        }
+    </script>
+
+    <h4>- 노드 삭제</h4>
+    <b id="p">아래 버튼 클릭시 삭제 됨</b><br>
+    <button onclick="test6();">요소 삭제</button>
+ 
+    <script>
+        function test6() {
+            // document.getElementById('p').remove();
+            document.getElementById('div5').firstChild.remove();
+        }
+    </script>
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+<!-- 
+    <button onclick="buttonTest2();">Click</button>
+    <div id="div2" class="div"></div>
+    <script>
+        const div2=document.getElementById("div2");
+        function buttonTest2(){
+            const animal001={name:"나고양",age:2,hobby:["낮잠자기","뒹굴거리기"]};
+            const animal002={name:"나강아",age:2,hobby:["산책하기","간식먹기"]};
+            const animal003={name:"나너구",age:2,hobby:["사기치기","괴롭히기"]};
+            const animal004={name:"나호랑",age:5,hobby:["소리지르기","째려보기"]};
+            const animal005={name:"나개구",age:3,hobby:["노래부르기","뛰어다니기"]};
+
+            const animalList=[animal001,animal002,animal003,animal004,animal005];
+
+            console.log(animalList);
+            
+            let ageSum=animalList.reduce(function(preview, element){
+                return preview + element.age;
+            },0);
+            div2.innerHTML=ageSum;
+        }
+    </> 
+-->
+
+</body>
+</html>
