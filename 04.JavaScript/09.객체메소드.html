@@ -72,5 +72,72 @@
             p2.setAge(35);
         }
     </script>
+
+    <br>
+
+    <h3>* in과 with키워드</h3>
+    <p>
+        - in: 객체 내에 해당 속성이 있는지 확인해 주는 키워드(있으면 true, 없으면 false)
+        - with : 객체의 속성 접근시 객체명 제시하는걸 생략할 수 있음
+    </p>
+
+    이름 : <input id="name"><br>
+    수학 : <input type="number" id="math"><br>
+    국어 : <input type="number" id="kor"><br>
+    영어 : <input type="number" id="eng"><br>
+    <button onclick="test2();">실행확인</button>
+    <div id="div2" class="area"></div>
+
+    <script>
+        function test2() {
+            const div2 = document.getElementById('div2');
+            const student = {
+                name : document.getElementById('name').value,
+                kor : document.getElementById('kor').value,
+                math : document.getElementById('math').value,
+                eng : document.getElementById('eng').value,
+                toString : function() {
+                    return `이름 : ${this.name} / 국어 : ${this.kor} / 수학 : ${this.math} / 영어 : ${this.eng}`;
+                },
+                sum : function() {
+                    return parseInt(this.kor) + parseInt(this.math) + parseInt(this.eng);
+                },
+                avg : function() {
+                    // return this.sum() / 3;
+                    // return Math.round(this.sum()/3);  // 정수로
+
+                    return Math.round(this.sum()/3*100)/100; // 소수점 2째자리 까지
+                    // return (this.sum()/3).toFixed(1);  // 소수점자리 항상 고정(90.0)
+                }
+            }
+            console.log(student);
+            // 객체 student 호출시 toString()라는 메소드 호출
+            // 사용자 정의 toString을 정의하면 정의한 메소드 호출
+            div2.innerHTML = `student : ${student}<br>`;
+
+            // '속성명' in 객체명 : 객체에 해당 속성이 존재하는가? true
+            div2.innerHTML += `name속성이 있는가? ${'name' in student}<br>`;
+            div2.innerHTML += `gender속성이 있는가? ${'gender' in student}<br>`;
+
+            div2.innerHTML += `학생이름 : ${student.name}<br>`;
+            div2.innerHTML += `국어 : ${student.kor}<br>`;
+            div2.innerHTML += `수학 : ${student.math}<br>`;
+            div2.innerHTML += `영어 : ${student.eng}<br>`;
+
+            div2.innerHTML += `총점 : ${student.sum()}<br>`;
+            div2.innerHTML += `평균 : ${student.avg()}<br><hr>`;
+
+            // with 이용
+            with(student) {
+                div2.innerHTML += `학생이름 : ${name}<br>`;
+                div2.innerHTML += `국어 : ${kor}<br>`;
+                div2.innerHTML += `수학 : ${math}<br>`;
+                div2.innerHTML += `영어 : ${eng}<br>`;
+
+                div2.innerHTML += `총점 : ${sum()}<br>`;
+                div2.innerHTML += `평균 : ${avg()}`;
+            }
+        }
+    </script>
 </body>
 </html>
