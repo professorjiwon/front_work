@@ -167,9 +167,13 @@
         아이디 : <input name="userId" id="userId"><br>
         비밀번호 : <input type="password" name="userPw" id="userPw"><br>
         비밀번호 확인 : <input type="password" id="checkPw"><br>
-        이름 : 2~4제외한 글자수 막아줌
-        성별 : 선택하지 않으면 막아줌
+        이름 : <input name="name" id="name"><br>
+        성별 : 
+            <input type="radio" name="gender" value="남">남자
+            <input type="radio" name="gender" value="여">여자<br>
         취미 :
+        <input type="checkbox" name="abc" value="abc">선택<br>
+
         <input type="submit" onclick="return validata();">
     </form>
 
@@ -177,11 +181,23 @@
         function validata() {
             const userPw = document.getElementById('userPw').value;
             const checkPw = document.getElementById('checkPw').value;
+            const gender = document.querySelector('input[name=gender]:checked');
+            const abc = document.querySelector('input[name=abc]:checked');
 
             if(userPw != checkPw) {
                 alert('비밀번호가 일치하지 않습니다');
                 return false;
             }
+            if(!gender) {
+                alert('성별을 체크해 주세요');
+                return false;
+            }
+
+            if(!abc) {
+                alert('체크박스를 체크해주세요');
+                return false;
+            }
+            
         }
     </script>
 </body>
