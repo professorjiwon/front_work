@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="resources/js/jquery-3.7.1.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.7.1.js"></script> -->
+    <title>jQuery 개요</title>
+</head>
+<body>
+    <h1>jQuery 개요</h1>
+    <h2>* jQuery란?</h2>
+    <p>
+        기존의 자바스트립트 언어 만으로 구현하기엔 복잡했던 구문 작성들을<br>
+        간편하게 하기 위해 '존 레식'에 의해 만들어짐<br>
+        JavaScript기반 라이브러리(유용한 기능들의 모음)<br>
+        즉, JavaScript언어로 유용한 함수나 내용들이 이미 정의되어있는 모음집<br><br>
+
+        복잡한 자바스트립트 구문을 보다 짧고 쉽게 개발 가능<br>
+
+        > jQuery의 장점<br>
+        1) DOM요소와 관련된 스크립트를 보다 쉽게 구현할 수 있음<br>
+        2) AJAX(비동기식 통신), 이벤트 처리 등등 폭넓게 지원함<br>
+        3) jQuery와 관련된 확장형 플러그인, 오픈 api등을 지원<br>
+           (챠트, 슬라이드, 등등...)
+    </p>
+
+    <h3>* jQuery 라이브러리 연결 방법</h3>
+    <p>
+        head태그 내에 script태그로 외부 jQuery관련 .js 파일 연결하기<br>
+        단, 오프라인/온라인 방식 있음<br>
+        - jQuery 공식 사이트 : <a href="https://jquery.com" target="_blank">공식 사이트</a><br><br>
+        1. jQuery 라이브러리를 직접 다운로드 받은 후 경로지정(오프라인)<br><br>
+        2. CDN(Content Delievery Network) 방식(온라인)<br>
+          파일을 다운로드 받지 않고 라이브러리를 제공하는 사이트의 url을 파일 경로에 지정<br>
+    </p>
+
+    <hr>
+
+    <h3>* jQuery 구문 작성하기</h3>
+    <p>
+        jQuery 구문으로 dom요소를 다루는 구문을 기본적으로 작성하기 때문에<br>
+        문서상에 요소들이 다 만들이지고나서 실행되어야 함<br><br>
+
+        <b>> 순수 자바 스크립트 에서는</b>
+        <pre>
+            window.onload = function() {
+                실행내용;
+            }
+
+            javascript에서의 window.onload구문은
+            해당 문서의 요소들이 다 로드되고 뿐만 아니라 연동되어 있는
+            외부문서들도 다 가지고 온 뒤에 실행됨
+            또한 window.onload는 단 한번만 실행(작성) 됨
+        </pre>
+
+        <b>> jQuery에서의 해당 내용은 3가지 구문으로 제공</b>
+
+        <pre>
+            1) jQuery(document).ready(function() {
+                   실행내용;
+               });
+            2) $(document).ready(function() {
+                    실행내용;
+                });
+            3) $(function() {
+                    실행내용;
+               });
+
+            해당 문서의 요소들만 다 로드되면 곧바로 실행됨
+            여러번 기술가능(제한 없음). 순서대로 실행내용
+            즉시실행함수와 유사함  
+        </pre>
+    </p>
+
+    <script>
+        window.onload = () => console.log('window.onload 구문1 실행됨');
+
+        window.onload = () => console.log('window.onload 구문2 실행됨');
+
+        jQuery(document).ready(function() {
+            console.log('jQuery(document).ready 구문 실행됨');
+        });
+
+        $(document).ready(function() {
+            console.log('$(document).ready 구문 실행됨');
+        });
+
+        $(function() {
+            console.log('$(function() 구문 실행됨');
+
+            /*
+            // 자바스크립트 방식
+            const h3Arr = document.getElementsByTagName('h3');
+            for(let i in h3Arr) {
+                h3Arr[i].style.backgroundColor='yellow';
+            }
+            */
+
+            // jQuery 방식
+            /*
+                $('선택자(해당요소 선택)').css(스타일 기능 수행)
+            */
+            $('h3').css('backgroundColor', 'pink');
+
+            $('#test').css('color', 'blue');
+        });
+    </script>
+
+    <div id="test">안녕하세요</div>
+
+    <br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

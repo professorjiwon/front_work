@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="resources/js/15.regExp.js"></script>
+    <title>정규식 문제 풀이</title>
+</head>
+<body>
+    <h1>회원가입</h1>
+
+    <form action="login.jsp">
+        <table>
+            <tr>
+                <td>* 아이디 : </td>
+                <td><input name="userId" id="userId" required></td>
+            </tr>
+            <tr>
+                <td colspan="2">첫글자는 반드시 영문자로 하고 영문자, 숫자 포함 총 4~12자로 입력하시오</td>
+            </tr>
+            <tr>
+                <td>* 비밀번호 : </td>
+                <td><input type="text" name="userPw" id="userPw" required></td>
+            </tr>
+            <tr>
+                <td colspan="2">영문자, 숫자, 특수문자로 총8~15자로 입력하시오</td>
+            </tr>
+            <tr>
+                <td>* 비밀번호 확인 : </td>
+                <td><input type="text" name="checkPw" id="checkPw" required></td>
+            </tr>
+            <tr>
+                <td colspan="2">위의 비밀번호와 일치하도록 입력하시오.</td>
+            </tr>
+            <tr>
+                <td>* 이름 : </td>
+                <td><input name="name" id="name" required></td>
+            </tr>
+            <tr>
+                <td colspan="2">한글로만 이루어져 있어야 하고 2글자 이상</td>
+            </tr>
+            <tr>
+                <td>* 이메일 : </td>
+                <td><input type="email" name="email" id="email" required></td>
+            </tr>
+            <tr>
+                <td colspan="2">이메일 형식에 맞춰 입력하세요</td>
+            </tr>
+            <tr>
+                <td>* 취미 : </td>
+                <td><input name="hobby" id="hobby"></td>
+            </tr>
+            <tr>
+                <td>* 거주지 : </td>
+                <td>
+                    <select name="addr">
+                        <option vlaue="seoul">서울</option>
+                        <option vlaue="incheon">인천</option>
+                        <option vlaue="busan">부산</option>
+                        <option vlaue="etc">기타</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"><hr></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="회원가입" onclick="return validata();">&emsp;&emsp;
+                    <input type="reset" value="취소">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>

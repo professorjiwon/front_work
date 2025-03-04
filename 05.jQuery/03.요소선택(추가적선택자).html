@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <title>요소선택(추가적인 선택자)</title>
+    <style>
+        .test {
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <h3>* 자손선택자(>)와 후손선택자( )</h3>
+
+    <div>
+        <ul>자손1
+            <li>div의 후손이면서 ul의 자손1</li>
+            <li>div의 후손이면서 ul의 자손2</li>
+            <li class="child">div의 후손이면서 ul의 자손3</li>
+            <li class="child">div의 후손이면서 ul의 자손4</li>
+            <li>
+                <h3>div/ul의 후손이면서 li의 자손</h3>
+            </li>
+        </ul>
+        <h3>자손2</h3>
+        <h3 class="child">자손3</h3>
+    </div>
+
+    <script>
+        $(() => {
+            $('div>h3').css('color','lightblue');
+            $('div h3').css('backgroundColor', 'yellow');  // div의 자손,후손 모두
+
+            // $('li>h3').css('color', 'violet');  // ul의 자손만
+            // $('ul h3').css('color', 'violet');
+            $('ul>li>h3').css('color', 'violet');
+
+            // $('li.child').css('color','red');
+            /*
+            $('ul>.child').css('color','red');
+            $('ul>.child').css('backgroundColor','green');
+            */
+
+            // 연이어서 css메서드 호출
+            /*
+            $('ul>.child').css('color','red')
+                          .css('backgroundColor','green');
+            */
+
+            // css메소드를 한번만 호출(객체로)
+            $('ul>.child').css({color:'red', backgroundColor:'green'});
+        })
+    </script>
+
+    <hr>
+
+    <h3>* 속성 선택자</h3>
+    <p>
+        선택자[속성] : 특정 속성을 가지고 있는 모든 요소 선택<br>
+        선택자[속성=특정값] : 속성값이 특정값과 '일치'하는 모든 요손 선택<br>
+        선택자[속성~=특정값] : 속성값이 단어로 "포함"되어 있는 요소<br>
+        선택자[속성^=특정값] : 속성값으로 "시작"하는 요소<br>
+        선택자[속성$=특정값] : 속성값으로 "끝"나는 요소<br>
+        선택자[속성*=특정값] : 속성값으로 "포함"하는 요소
+    </p>
+
+    <input type="text"><br>
+    <input type="number" class="test test1"><br>
+    <input type="radio"><br>
+    <input type="checkbox"><br>
+    <input type="button" value="button" class="test2"><br>
+<!--
+    <script>
+        $(() => {
+            $('input[class]').css('backgroundColor', 'yellowgreen');
+            $('input[type=text]').val('김지원');
+            // .val() : 선택된 요소의 value속성값을 수행
+
+            $('input[type^=ra]').attr('checked',true);
+            // .attr() : 그외의 속성들과 관련된 기능 수행
+
+            $('input[class*=st2]').css({width:'100px', height:'50px'})
+                                  .val('왕버튼');
+
+        })
+    </script>
+-->
+
+    <h3>* 입력양식 선택자(input태그의 type속성에 따라서도 요소 선택)</h3>
+
+    텍스트상자 : <input type="text"><br>
+    일반버튼 : <input type="button" value="일반버튼"><br>
+    체크박스 : <input type="checkbox"><br>
+    첨부파일 : <input type="file"><br>
+    비밀번호 : <input type="password"><br>
+    라디오버튼 : <input type="radio"><br>
+    초기화버튼 : <input type="reset"><br>
+    제출버튼 : <input type="submit">
+<!--
+    <script>
+        $(() => {
+            $(':text').css('backgroundColor','lightgray');
+
+            $(':button').css({width:'100px', height:'70px'});
+
+            // 문제
+            // 1. 첨부파일 : 배경색 바꾸기
+
+            // 2. 비밀번호 : 배경색 바꾸기
+
+            // 3. 라디오버튼 : check상태로 바꾸기, 가로 50px, 세로 50px로 바꾸기
+
+            // 4. 초기버튼 : 배경색과 글자색 바꾸기 , 테두리 없애기 , 문구를 취소로 변경
+
+            // 5. 제출버튼 : 클릭시 alert('안녕')이 실행되도록
+/*
+            // mouseenter : 선택된 요소의 경계 내부로 마우스가 들어가는 순간 발생하는 이벤트
+            $(':submit').mouseenter(function() {
+                // $(this).css('backgroundColor','purple');
+
+                $(this).addClass('test');
+            })
+
+            // mouseout : 선택된 요소의 경계 외부로 마우스가 나갈 때
+            $(':submit').mouseout(function() {
+                $(this).removeClass('test');
+            })
+*/
+            // hover = mouseenter + mouseout
+            $(':submit').hover(function() {
+                $(this).addClass('test');
+            }, function() {
+                $(this).removeClass('test');
+            })
+        })
+    </script>
+-->
+    <hr>
+
+    <h3>* 상태(checked, selected, disabled, enabled)선택자</h3>
+
+    <h4>- checked 상태 선택자(radio, checkbox)</h4>
+
+    취미 : 
+    <input type="checkbox" name="hobby" value="game">게임&emsp;
+    <input type="checkbox" name="hobby" value="movie">영화&emsp;
+    <input type="checkbox" name="hobby" value="music">음악
+    <br>
+
+    <button type="button" id="btn">실행확인</button>
+
+    <script>
+        $(() => {
+            /*
+            $('#btn').click(function() {
+                $('input:checked').css({width:'50px', height:'50px'});
+            })
+            */
+
+            // change : checkbox요소들에 바뀌는 이벤트가 발생시
+            $(':checkbox').change(function() {
+                // prop('checked') : 체크했으면 true반환, 해제했으면 false반환
+                console.log($(this).prop('checked'));
+                
+                if($(this).prop('checked')) {
+                    $(this).css({width:'50px', height:'50px'});
+                } else {
+                    $(this).css({width:'', height:''});
+                }
+            })
+        })
+    </script>
+
+    <br><br>
+
+    <h4>- selected 상태 선택자(select>option)</h4>
+    국적 :
+    <select name="national">
+        <option value="x">선택안함</option>
+        <option value="ko">한국</option>
+        <option value="us">미국</option>
+        <option value="eu">영국</option>
+    </select>
+
+    <button type="button" onclick="test();">확인</button>
+    <br>
+
+    선택한 나라 : <span id="result">선택안함</span>
+
+    <script>
+        function test() {
+            console.log($('option:selected').val());
+            console.log($('option:selected').html());
+
+            $('#result').html($('option:selected').html());
+        }
+    </script>
+
+    <br><br>
+
+    <h4>- disabled, enabled 상태 선택자(input요소들, button등)</h4>
+
+    <button type="button">활성화버튼</button>
+    <button type="button" disabled>비활성화버튼</button>
+
+    <script>
+        $(() => {
+            $('button:enabled').css('backgroundColor', 'yellowgreen');
+            $('button:disabled').css('backgroundColor', 'orange');
+        })
+    </script>
+</body>
+</html>
