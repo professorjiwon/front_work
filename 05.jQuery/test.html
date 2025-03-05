@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <title>Document</title>
+    <style>
+        .highlight-0{
+            background-color: aliceblue;
+        }
+        .highlight-1{
+            background-color: antiquewhite;
+        }
+        .highlight-2{
+            background-color: aqua;
+        }
+        .highlight-3{
+            background-color: aquamarine;
+        }
+        .highlight-4{
+            background-color: azure;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <h1>item</h1>
+        <h1>item</h1>
+        <h1>item</h1>
+        <h1>item</h1>
+        <h1>item</h1>
+    </div>
+    <script>
+        $(function(){
+            $("#div1").children().each(function(index, value){
+                console.log(value);
+
+                // value.className="highlight-"+index;
+
+                $(value).addClass(`highlight-${index}`);
+
+                // $(this).addClass("highlight-"+index);
+            });
+
+        });
+    </script>
+</body>
+</html>
