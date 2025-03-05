@@ -71,11 +71,11 @@
     <input type="radio"><br>
     <input type="checkbox"><br>
     <input type="button" value="button" class="test2"><br>
-<!--
+
     <script>
         $(() => {
             $('input[class]').css('backgroundColor', 'yellowgreen');
-            $('input[type=text]').val('김지원');
+            $('input[type=text]').val('홍길동');
             // .val() : 선택된 요소의 value속성값을 수행
 
             $('input[type^=ra]').attr('checked',true);
@@ -86,7 +86,7 @@
 
         })
     </script>
--->
+
 
     <h3>* 입력양식 선택자(input태그의 type속성에 따라서도 요소 선택)</h3>
 
@@ -179,7 +179,7 @@
     국적 :
     <select name="national">
         <option value="x">선택안함</option>
-        <option value="ko">한국</option>
+        <option value="ko" selected>한국</option>
         <option value="us">미국</option>
         <option value="eu">영국</option>
     </select>
