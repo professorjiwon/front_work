@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <title>이벤트</title>
+</head>
+<body>
+    <h1>이벤트 핸들러(이벤트 발생시 실행될 function) 연결 방법</h1>
+
+    <h3>* 방법 1 : 이벤트 메소드를 통한 연결</h3>
+    <pre>
+        $('선택자').이벤트메소드(function() {
+            해당 요소에 이벤트 발생시 실행할 내용;
+        })
+    </pre>
+
+    <h4 id="test1">클릭해보세요</h4>
+
+    <script>
+        $(() => {
+            $('#test1').click(function() {
+                $(this).text('클릭되었습니다!!!')
+            })
+
+            $('#test1').dblclick(function() {
+                $(this).css('color', 'purple');
+            })
+
+            $('#test1').click(function() {
+                $(this).css('backgroundColor', 'lightgray');
+            })
+        })
+    </script>
+
+    <br>
+
+    <h3>* 방법2 : on 메소드를 이용하는 방법</h3>
+    <pre>
+        $('선택자').on('이벤트명', function() {
+            해당 요소에 이벤트 발생시 실행할 내용;
+        })
+    </pre>
+
+    <h4 id="test2">마우스 클릭 및 올려보세요</h4>
+
+    <script>
+        $(() => {
+            /*
+            $('#test2').on('mouseenter', function() {
+
+            })
+            $('#test2').on('mouseout', function() {
+
+            })
+            */
+
+            // on메소드를 이용하여 여러개의 이벤트를 연결
+            // $('#test2').on({key:값, key:값, key:값, ... })
+            // $('#test2').on({mouseenter:function(){}, mouseout:function(){}, click:function(){}})
+            $('#test2').on({mouseenter:function(){
+                $(this).css('backgroundColor','yellow')
+                       .text('마우스가 경계안으로 들어옴');
+            }, mouseout:function(){
+                $(this).css('backgroundColor', 'lightpink')
+                        .text('마우스가 경계밖으로 빠져나감');
+            }, click:function(){
+                $(this).off('mouseenter')
+                       .off('mouseout')
+                       .css('backgroundColor','orange')
+                       .text('이벤트제거됨');
+            }})
+        })
+    </script>
+
+    <br>
+
+    <h3>* 방법3 </h3>
+
+    <pre>
+        $('상위요소선택자').on('이벤트명', '하위요소선택자(이벤트를 걸고자하는 요소)', function() {
+            선택된 상위요소 안에 있는 하위요소에 이벤트가 발생되었을 때 실행할 내용;
+        })
+    </pre>
+
+    <div id="wrap">
+        <h4>h4를 클릭해보세요</h4>
+        <h5>h5를 클릭해보세요</h5>
+    </div>
+
+    <h5>div 바깥쪽의 h5</h5>
+
+    <script>
+        $(() => {
+           $('#wrap').on('click', 'h4, h5', function() {
+                $(this).text('안녕');
+           })
+           $(document).on('click', 'h5', function() {
+                $(this).css('color', 'hotpink');
+           })
+        })
+    </script>
+
+    <hr>
+
+    <h3>** 동적으로 만들어진 요소에도 동일한 이벤트를 적용시키고자 한다면 반드시 방법3으로 해야됨</h3>
+
+    <div id="wrap2" style="border: 1px solid red;">
+        <h6>기존에 존재하는 h6요소</h6>
+    </div>
+
+    <script>
+        $(() => {
+            /*
+            // 방법1. 이벤트 메소드 => 동적으로 만들어진 요소에 이벤트 적용되지 않음
+            $('#wrap2>h6').click(function() {
+                $('#wrap2').append('<h6>클릭으로 인해 동적으로 만들어진 h6요소</h6>');
+            })
+
+            // 방법2. on메소드 => 동적으로 만들어진 요소에 이벤트 적용되지 않음
+            $('#wrap2>h6').on('click', function() {
+                $('#wrap2').append('<h6>클릭으로 인해 동적으로 만들어진 h6요소</h6>');
+            })
+           */
+
+            // 방법3. 하위요소 => 동적으로 만들어진 요소에 이벤트도 같이 적용됨
+            $('#wrap2').on('click','h6', function() {
+                $('#wrap2').append('<h6>클릭으로 인해 동적으로 만들어진 h6요소</h6>');
+            })
+        })
+    </script>
+</body>
+</html>
