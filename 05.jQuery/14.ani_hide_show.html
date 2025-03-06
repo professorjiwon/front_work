@@ -30,7 +30,7 @@
     <script>
         $(() => {
             $('#hide').click(function() {
-                $('#img1').hide(2000,'');
+                $('#img1').hide(2000,'easeInOutQuint');
                 //$('#content').hide(3000);
             })
             $('#show').click(function() {
@@ -38,7 +38,7 @@
                 //$('#content').show(3000);
             })
             $('#toggle').click(function() {
-                $('#img1').toggle(2000);
+                $('#img1').toggle(2000, 'easeOutBounce');
             })
         })
     </script>

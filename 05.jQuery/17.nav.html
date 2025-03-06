@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js"></script>
+    <title>nav 애니메이션</title>
+    <style>
+        li {
+            list-style: none;
+            width: 200px;
+            height: 50px;
+            float: left;
+        }
+        a {
+            text-decoration: none;
+            display: inline-block;
+            color: black;
+            background-color: rgb(175, 202, 175);
+            width: 200px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 20px;
+        }
+    </style>
+
+    <script>
+        $(() => {
+            $('li a').hover(function(){}, function(){});
+        })
+    </script>
+</head>
+<body>
+    <ul>
+        <li><a href='01.jQuery개요.html'>Home</a></li>
+        <li><a href='01.jQuery개요.html'>About</a></li>
+        <li><a href='01.jQuery개요.html'>Portfolio</a></li>
+        <li><a href='01.jQuery개요.html'>Contact</a></li>
+    </ul>
+</body>
+</html>

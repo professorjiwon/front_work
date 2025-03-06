@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <title>애니메이션 fadeIn fadeOut</title>
+</head>
+<body>
+    <h3>* fadeIn(), fadeOut(), fadeToggle()</h3>
+    <p>
+        선택된 요소가 점점 투명해지면서 사라지고 점점 선명해지면서 보여주는 메소드
+    </p>
+
+    <button onclick="test1()">fadeOut</button>&emsp;
+    <button onclick="test2()">fadeIn</button>&emsp;
+    <button onclick="test3()">fadeToggle</button>
+
+    <br><br>
+
+    <img src="resources/img/img01.jpg" id="img1">
+
+    <script>
+        function test1() {
+            $('#img1').fadeOut(2000);
+        }
+
+        function test2() {
+            // $('#img1').fadeIn(2000, 0.5);
+            $('#img1').fadeTo(2000, 0.5);
+        }
+
+        function test3() {
+            $('#img1').fadeToggle(2000);
+        }
+    </script>
+</body>
+</html>
