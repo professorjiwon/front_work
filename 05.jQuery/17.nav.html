@@ -17,27 +17,38 @@
             text-decoration: none;
             display: inline-block;
             color: black;
-            background-color: rgb(175, 202, 175);
+            background-color:darkseagreen;
             width: 200px;
             height: 50px;
             text-align: center;
             line-height: 50px;
             font-size: 20px;
+
         }
     </style>
 
     <script>
         $(() => {
-            $('li a').hover(function(){}, function(){});
+            $('li a').hover(function(){
+                let overColor = $(this).attr('data-bg');
+                console.log(overColor);
+                $(this).stop()
+                       .animate({
+                        'background-color': overColor,
+                        'color':'white'
+                        }, 1000);
+            }, function(){
+                $(this).stop().animate({'background-color':'#8FBC8F', 'color':'black'}, 1000);
+            });
         })
     </script>
 </head>
 <body>
     <ul>
-        <li><a href='01.jQuery개요.html'>Home</a></li>
-        <li><a href='01.jQuery개요.html'>About</a></li>
-        <li><a href='01.jQuery개요.html'>Portfolio</a></li>
-        <li><a href='01.jQuery개요.html'>Contact</a></li>
+        <li><a href='01.jQuery개요.html' data-bg="#004C63">Home</a></li>
+        <li><a href='01.jQuery개요.html' data-bg="#870073">About</a></li>
+        <li><a href='01.jQuery개요.html' data-bg="#860000">Portfolio</a></li>
+        <li><a href='01.jQuery개요.html' data-bg="#3F0099">Contact</a></li>
     </ul>
 </body>
 </html>
