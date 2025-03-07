@@ -19,16 +19,14 @@ $(() => {
 
     setInterval(slide, 2000);
 
-    // x= [img1, img2, img3]
-    let x = $('#imgslide>img');
-    let y = 3;
+    let x = $('#imgslide>div');
     function slide() {
-        y--;
-        if(y==0) {
-            x.fadeIn();
-            y=3;
+        if(parseInt(x.css('left')) == -2000) {  
+            x.animate({left: '-=1000px'}, function() {
+                x.css('left', 0);
+            })
         } else {
-            x.eq(y).fadeOut();
+            x.animate({left:'-=1000px'})
         }    
     }
 })
